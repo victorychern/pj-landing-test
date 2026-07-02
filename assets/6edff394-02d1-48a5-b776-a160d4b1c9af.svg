@@ -1,0 +1,7 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 154.489 188.82" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="shield">
+<path d="M77.2445 0L0 34.3309V85.8273C0 133.461 32.9577 178.006 77.2445 188.82C121.531 178.006 154.489 133.461 154.489 85.8273V34.3309L77.2445 0Z" fill="var(--fill-0, black)"/>
+<path d="M77.2445 0L0 34.3309V85.8273C0 133.461 32.9577 178.006 77.2445 188.82C121.531 178.006 154.489 133.461 154.489 85.8273V34.3309L77.2445 0Z" fill="var(--fill-1, #F3CCA7)"/>
+<path d="M153.489 34.9805V85.8271C153.489 132.957 120.925 176.993 77.2441 187.789C33.5637 176.992 1 132.956 1 85.8271V34.9805L77.2441 1.09375L153.489 34.9805Z" stroke="var(--stroke-0, #FAFAFA)" stroke-opacity="0.38" stroke-width="2"/>
+</g>
+</svg>

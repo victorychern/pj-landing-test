@@ -1,0 +1,130 @@
+/* ── About page ── */
+/* ══════════════════════════════════════
+   ABOUT HERO SECTION
+══════════════════════════════════════ */
+.about-hero {
+  width: 100%;
+  max-width: 1440px;
+  padding: 160px clamp(16px, calc((100vw - 1164px) / 2), 138px) 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Section header */
+.about-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+.about-badge {
+  background: var(--bg-surface-1);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: var(--font-sans);
+  font-size: var(--text-small-size);
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-small-tracking);
+  line-height: var(--text-small-line);
+}
+.about-title {
+  font-family: var(--font-sans-display);
+  font-size: var(--text-h1-size);
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h1-tracking);
+  line-height: var(--text-h1-line);
+  text-align: center;
+  max-width: 966px;
+}
+.about-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  text-align: center;
+  max-width: 720px;
+}
+
+/* Globe / earth */
+.about-earth {
+  position: relative;
+  width: 1024px;
+  height: 430px;
+  overflow: clip;
+  flex-shrink: 0;
+}
+.about-earth-globe {
+  position: absolute;
+  left: -83px;
+  top: -88px;
+  width: 1175px;
+  height: 1024px;
+  background: linear-gradient(180deg, rgba(119,127,251,0.7) 0%, rgba(198,201,250,0.7) 100%);
+  -webkit-mask-image: url(assets/about-globe-mask.png);
+  mask-image: url(assets/about-globe-mask.png);
+  -webkit-mask-size: 1093px 1024px;
+  mask-size: 1093px 1024px;
+  -webkit-mask-position: 49px 0px;
+  mask-position: 49px 0px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.about-earth-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 274px;
+  background: linear-gradient(180deg, rgba(239,239,241,0) 0%, #efeff1 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Floating cards */
+.about-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px 8px 8px;
+  background: #18181b;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(26,29,81,0.06);
+  z-index: 3;
+}
+.about-card img { width: 24px; height: 24px; display: block; flex-shrink: 0; }
+.about-card-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-inverse);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  white-space: nowrap;
+}
+.about-pointer {
+  position: absolute;
+  width: 18px;
+  height: 63px;
+  display: block;
+  z-index: 1;
+}
+
+
+@media (max-width: 960px) {
+  /* hero on mobile */
+  .about-hero { padding: 120px 16px 60px; }
+  .about-earth { width: 100%; max-width: 100%; overflow: clip; }
+  .about-card { display: none; }
+  .about-pointer { display: none; }
+}
+}
