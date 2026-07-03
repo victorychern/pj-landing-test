@@ -67,8 +67,8 @@
   width: 1175px;
   height: 1024px;
   background: linear-gradient(180deg, rgba(119,127,251,0.7) 0%, rgba(198,201,250,0.7) 100%);
-  -webkit-mask-image: url(assets/about-globe-mask.png);
-  mask-image: url(assets/about-globe-mask.png);
+  -webkit-mask-image: url(../assets/about-globe-mask.png);
+  mask-image: url(../assets/about-globe-mask.png);
   -webkit-mask-size: 1093px 1024px;
   mask-size: 1093px 1024px;
   -webkit-mask-position: 49px 0px;
