@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@600&display=swap">
+<link rel="preload" href="assets/fonts/DSEG14Classic-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/index.css">
 </head>
@@ -592,7 +593,15 @@ document.querySelectorAll('.flag').forEach(function(f){
     }
   }
 
-  setTimeout(function(){ requestAnimationFrame(step); }, 400);
+  var triggered = false;
+  var card = document.querySelector('.card-reliable');
+  var observer = new IntersectionObserver(function(entries) {
+    if (triggered || !entries[0].isIntersecting) return;
+    triggered = true;
+    observer.disconnect();
+    requestAnimationFrame(step);
+  }, { threshold: 0.3 });
+  if (card) observer.observe(card);
 })();
 </script>
 

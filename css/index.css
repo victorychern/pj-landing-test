@@ -611,6 +611,7 @@ position: absolute;
 font-family: "DSEG14 Classic", "Courier New", monospace;
 font-size: 92px;
 font-weight: 400;
+font-variation-settings: normal;
 letter-spacing: -2px;
 color: rgba(255,255,255,0.25);
 user-select: none;
@@ -621,6 +622,7 @@ position: absolute;
 font-family: "DSEG14 Classic", "Courier New", monospace;
 font-size: 92px;
 font-weight: 400;
+font-variation-settings: normal;
 letter-spacing: -2px;
 color: #0e9f66;
 white-space: nowrap;
@@ -802,11 +804,11 @@ mask-mode: alpha;
 z-index: 1;
 }
 .circle-m img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-.circle-m-1 { width: 394.518px; height: 394.518px; top: -103.95px; opacity: 0.4; -webkit-mask-position: -31.527px 45.161px; mask-position: -31.527px 45.161px; }
-.circle-m-2 { width: 322.942px; height: 322.942px; top: -68.17px;  opacity: 0.4; -webkit-mask-position: -67.315px 9.373px; mask-position: -67.315px 9.373px; }
-.circle-m-3 { width: 253.071px; height: 253.071px; top: -33.23px; -webkit-mask-position: -102.251px -25.563px; mask-position: -102.251px -25.563px; }
-.circle-m-4 { width: 190.016px; height: 190.016px; top: -1.7px;   -webkit-mask-position: -133.778px -57.09px; mask-position: -133.778px -57.09px; }
-.circle-m-5 { width: 138.891px; height: 138.891px; top: 23.86px;  -webkit-mask-position: -159.341px -82.653px; mask-position: -159.341px -82.653px; }
+.circle-m-1 { width: 394.518px; height: 394.518px; top: -103.95px; opacity: 0.4; -webkit-mask-position: -31.527px 45.161px; mask-position: -31.527px 45.161px; animation: ring-pulse 3s ease-in-out infinite; animation-delay: 0.8s; }
+.circle-m-2 { width: 322.942px; height: 322.942px; top: -68.17px;  opacity: 0.4; -webkit-mask-position: -67.315px 9.373px; mask-position: -67.315px 9.373px; animation: ring-pulse 3s ease-in-out infinite; animation-delay: 0.6s; }
+.circle-m-3 { width: 253.071px; height: 253.071px; top: -33.23px; -webkit-mask-position: -102.251px -25.563px; mask-position: -102.251px -25.563px; animation: ring-pulse 3s ease-in-out infinite; animation-delay: 0.4s; }
+.circle-m-4 { width: 190.016px; height: 190.016px; top: -1.7px;   -webkit-mask-position: -133.778px -57.09px; mask-position: -133.778px -57.09px; animation: ring-pulse 3s ease-in-out infinite; animation-delay: 0.2s; }
+.circle-m-5 { width: 138.891px; height: 138.891px; top: 23.86px;  -webkit-mask-position: -159.341px -82.653px; mask-position: -159.341px -82.653px; animation: ring-pulse 3s ease-in-out infinite; animation-delay: 0s; }
 
 .icon-holder-m {
 position: absolute;
@@ -874,6 +876,7 @@ position: absolute;
 font-family: "DSEG14 Classic", "Courier New", monospace;
 font-size: 61.5px;
 font-weight: 400;
+font-variation-settings: normal;
 letter-spacing: -1.6px;
 color: rgba(255,255,255,0.25);
 white-space: nowrap;
@@ -883,6 +886,7 @@ position: absolute;
 font-family: "DSEG14 Classic", "Courier New", monospace;
 font-size: 61.5px;
 font-weight: 400;
+font-variation-settings: normal;
 letter-spacing: -1.6px;
 white-space: nowrap;
 }
