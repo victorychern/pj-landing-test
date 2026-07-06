@@ -275,9 +275,9 @@
 </div>
 <script>
 document.addEventListener('dragstart', function(e){ e.preventDefault(); });
-document.querySelectorAll('.flag').forEach(function(f){
-  f.addEventListener('animationend', function(){
-    f.classList.add('flag-settled');
+document.querySelectorAll('.flag, .flag-m').forEach(function(f){
+  f.addEventListener('animationend', function(e){
+    if (e.animationName === 'flag-pop') f.classList.add('flag-settled');
   });
 });
 </script>
