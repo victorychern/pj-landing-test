@@ -18,12 +18,15 @@ document.head.appendChild(_favicon);
   const hero = Array.from(document.body.children).find(el => el.tagName !== 'HEADER');
   if (hero) {
     hero.classList.add('hero-animate');
-    setTimeout(() => { hero.style.overflow = 'visible'; }, 700);
+    setTimeout(() => {
+      hero.classList.remove('hero-animate');
+      hero.style.overflow = 'visible';
+    }, 700);
   }
 
   // Language dropdown
   document.querySelectorAll('.lang-wrap').forEach(wrap => {
-    const btn = wrap.querySelector('.site-header-lang');
+    const btn = wrap.querySelector('.site-header-lang, .ft-lang-btn');
     const drop = wrap.querySelector('.lang-drop');
     const list = wrap.querySelector('.lang-drop-list');
     const scrollbar = wrap.querySelector('.lang-scrollbar');
@@ -85,6 +88,8 @@ document.head.appendChild(_favicon);
         const flag = item.querySelector('img:first-child');
         const langFlag = wrap.querySelector('.site-header-lang-flag img');
         if (flag && langFlag) langFlag.src = flag.src;
+        const langName = wrap.querySelector('.ft-lang-name');
+        if (langName) langName.textContent = item.querySelector('.lang-item-name').textContent;
         drop.classList.remove('is-open');
         btn.classList.remove('is-open');
       });
@@ -94,7 +99,29 @@ document.head.appendChild(_favicon);
   document.addEventListener('click', () => {
     document.querySelectorAll('.lang-drop.is-open').forEach(drop => {
       drop.classList.remove('is-open');
-      drop.closest('.lang-wrap').querySelector('.site-header-lang').classList.remove('is-open');
+      const btn = drop.closest('.lang-wrap').querySelector('.site-header-lang, .ft-lang-btn');
+      if (btn) btn.classList.remove('is-open');
     });
   });
+
+  // Hide header on scroll down, show on scroll up; hide when footer is visible
+  const _headers = document.querySelectorAll('.site-header, .site-header-mobile');
+  const _footer = document.getElementById('footer');
+  let _lastY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    const delta = y - _lastY;
+    if (Math.abs(delta) < 4) { _lastY = y; return; }
+
+    const footerVisible = _footer && _footer.getBoundingClientRect().top < window.innerHeight;
+
+    if (footerVisible) {
+      _headers.forEach(h => h.classList.toggle('is-hidden', delta > 0));
+    } else {
+      _headers.forEach(h => h.classList.remove('is-hidden'));
+    }
+
+    _lastY = y;
+  }, { passive: true });
 })();

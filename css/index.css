@@ -1349,17 +1349,8 @@ letter-spacing: 0;
 line-height: 36px;
 }
 
-/* Hero section mobile */
-@media (max-width: 768px) {
-.hero-section {
-  padding: 140px 16px 80px;
-  gap: 32px;
-}
-.hero-title {
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: -0.6px;
-}
+/* Proxy cards mobile */
+@media (max-width: 960px) {
 .proxy-cards-row {
   flex-direction: column;
   max-width: 442px;
@@ -1388,6 +1379,19 @@ line-height: 36px;
 }
 .pcard-pricing-body {
   padding: 8px 0 12px 0;
+}
+}
+
+/* Hero section mobile */
+@media (max-width: 768px) {
+.hero-section {
+  padding: 140px 16px 80px;
+  gap: 32px;
+}
+.hero-title {
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: -0.6px;
 }
 }
 
