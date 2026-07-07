@@ -1,3 +1,11 @@
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(2rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-animate {
+  animation: hero-fade-up 0.5s ease-out 0.1s both;
+}
+
 @font-face {
   font-family: 'DSEG14 Classic';
   src: url('../assets/fonts/DSEG14Classic-Regular.woff2') format('woff2'),
@@ -493,7 +501,7 @@ footer { width: 100%; background: #0B0B0D; padding: 60px 16px 24px; }
 .ft-heading { font-family: var(--font-sans); font-size: var(--text-body-s-size); font-weight: 500; color: rgba(252,252,252,0.65); letter-spacing: var(--text-body-s-tracking); line-height: var(--text-body-s-line); }
 .ft-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .ft-list a { font-family: var(--font-sans); font-size: var(--text-body-s-size); font-weight: 400; color: rgba(252,252,252,0.9); letter-spacing: var(--text-body-s-tracking); line-height: var(--text-body-s-line); text-decoration: none; display: flex; align-items: center; height: 24px; }
-.ft-list a:hover { color: #fff; }
+.ft-list a:hover { color: rgba(252,252,252,0.65); }
 .ft-bottom { display: flex; align-items: center; gap: 24px; }
 .ft-logo { display: flex; align-items: center; margin-right: auto; }
 .ft-logo img { height: 62px; width: auto; display: block; }

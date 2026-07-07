@@ -916,6 +916,7 @@ padding: 140px clamp(16px, calc((100vw - 1164px) / 2), 140px) 100px;
 display: flex;
 flex-direction: column;
 gap: 32px;
+overflow: clip;
 align-items: center;
 }
 .hero-text {
@@ -953,6 +954,7 @@ width: 100%;
 max-width: 924px;
 margin: 0 auto;
 }
+
 
 /* Single proxy card */
 .pcard {
