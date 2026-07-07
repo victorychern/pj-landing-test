@@ -668,7 +668,7 @@ transition: background 0.12s;
   .ft-lang-wrap { flex: 0 0 auto; }
   .ft-lang-name { display: none; }
   .ft-socials { flex: 0 0 100%; gap: 8px; }
-  .ft-social-btn { flex: 1; min-width: 0; }
+  .ft-social-btn { flex: 1; min-width: 0; height: 44px; }
   .ft-bottom-wrap { display: flex; flex-direction: column; gap: 24px; width: 100%; }
 }
 @media (max-width: 768px) {
