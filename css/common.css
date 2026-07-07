@@ -443,7 +443,7 @@ footer { width: 100%; background: #0B0B0D; padding: 60px 16px 24px; }
 .ft-social-btn:hover { background: rgba(255,255,255,0.1); }
 .ft-copy { text-align: center; }
 .ft-copy p { font-family: var(--font-sans); font-size: var(--text-body-s-size); font-weight: 400; color: rgba(252,252,252,0.65); letter-spacing: var(--text-body-s-tracking); line-height: var(--text-body-s-line); }
-.ft-bottom-wrap { display: contents; }
+.ft-bottom-wrap { display: flex; flex-direction: column; gap: 24px; width: 100%; }
 @media (max-width: 960px) {
   footer { padding: 40px 16px 24px; }
   .ft-cta { flex-direction: column; gap: 40px; align-items: center; }

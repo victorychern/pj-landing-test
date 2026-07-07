@@ -44,22 +44,33 @@
     <div class="pcard-fields">
       <div class="pcard-fields-row">
         <!-- Country (dropdown) -->
-        <div class="pf-wrap" data-pf="country-isp">
+        <div class="pf-wrap" data-pf="country-isp" data-searchable>
           <div class="pf-input">
             <img class="pf-flag" src="assets/flag-au.svg" alt="">
             <div class="pf-text">
               <span class="pf-label">Country</span>
               <span class="pf-value">Australia</span>
+              <input class="pf-search" type="text" autocomplete="off" spellcheck="false" tabindex="-1" aria-label="Search country">
             </div>
             <img class="pf-chev" src="assets/chevron-down-field.svg" alt="">
           </div>
-          <div class="pf-drop" id="pfdrop-country-isp">
-            <div class="pf-drop-item"><img src="assets/flag-bg.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Bulgaria</span><span class="pf-drop-price">$5.03/month</span></div></div>
-            <div class="pf-drop-item"><img src="assets/flag-be.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Belgium</span><span class="pf-drop-price">$5.03/month</span></div></div>
-            <div class="pf-drop-item"><img src="assets/flag-bd.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Bangladesh</span><span class="pf-drop-price">$5.03/month</span></div></div>
-            <div class="pf-drop-item"><img src="assets/flag-at.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Austria</span><span class="pf-drop-price">$5.03/month</span></div></div>
-            <div class="pf-drop-item"><img src="assets/flag-us.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">United States</span><span class="pf-drop-price">$5.03/month</span></div></div>
-            <div class="pf-drop-item pf-drop-item--on"><img src="assets/flag-au.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Australia</span><span class="pf-drop-price">$5.03/month</span></div><img class="pf-drop-check" src="assets/check-m.svg" alt=""></div>
+          <div class="pf-drop pf-drop--scroll" id="pfdrop-country-isp">
+            <div class="pf-drop-list">
+              <div class="pf-drop-item pf-drop-item--on"><img src="assets/flag-au.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Australia</span><span class="pf-drop-price">$5.03/month</span></div><img class="pf-drop-check" src="assets/check-m.svg" alt=""></div>
+              <div class="pf-drop-item"><img src="assets/flag-bg.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Bulgaria</span><span class="pf-drop-price">$5.03/month</span></div></div>
+              <div class="pf-drop-item"><img src="assets/flag-be.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Belgium</span><span class="pf-drop-price">$5.03/month</span></div></div>
+              <div class="pf-drop-item"><img src="assets/flag-bd.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Bangladesh</span><span class="pf-drop-price">$5.03/month</span></div></div>
+              <div class="pf-drop-item"><img src="assets/flag-at.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Austria</span><span class="pf-drop-price">$5.03/month</span></div></div>
+              <div class="pf-drop-item"><img src="assets/flag-us.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">United States</span><span class="pf-drop-price">$5.03/month</span></div></div>
+              <div class="pf-drop-item"><img src="assets/flag-br.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Brazil</span><span class="pf-drop-price">$4.87/month</span></div></div>
+              <div class="pf-drop-item"><img src="assets/flag-ca.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Canada</span><span class="pf-drop-price">$5.03/month</span></div></div>
+              <div class="pf-drop-item"><img src="assets/flag-in.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">India</span><span class="pf-drop-price">$3.24/month</span></div></div>
+              <div class="pf-drop-item"><img src="assets/flag-jp.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Japan</span><span class="pf-drop-price">$5.99/month</span></div></div>
+              <div class="pf-drop-item"><img src="assets/flag-nl.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Netherlands</span><span class="pf-drop-price">$5.03/month</span></div></div>
+              <div class="pf-drop-item"><img src="assets/flag-sg.svg" alt=""><div class="pf-drop-text"><span class="pf-drop-name">Singapore</span><span class="pf-drop-price">$5.49/month</span></div></div>
+            </div>
+            <div class="pf-drop-no-results" aria-hidden="true">No results</div>
+            <div class="pf-scrollbar" aria-hidden="true"><div class="pf-scrollbar-thumb"></div></div>
           </div>
         </div>
         <!-- City (no dropdown) -->
@@ -1117,11 +1128,40 @@ document.querySelectorAll('.flag, .flag-m').forEach(function(f){
 <script>
 (function () {
   // ── Proxy field dropdowns ──
+  var TRACK_H = 272; // 292 total height - 10px padding top - 10px padding bottom
+
+  function pfUpdateScrollbar(drop) {
+    var list = drop.querySelector('.pf-drop-list');
+    var sb = drop.querySelector('.pf-scrollbar');
+    if (!list || !sb) return;
+    var thumb = sb.querySelector('.pf-scrollbar-thumb');
+    var ratio = list.clientHeight / list.scrollHeight;
+    if (ratio >= 1) { sb.classList.remove('is-visible'); return; }
+    sb.classList.add('is-visible');
+    var thumbH = Math.max(20, ratio * TRACK_H);
+    var scrollRatio = list.scrollHeight > list.clientHeight
+      ? list.scrollTop / (list.scrollHeight - list.clientHeight) : 0;
+    thumb.style.height = thumbH + 'px';
+    thumb.style.top = (10 + scrollRatio * (TRACK_H - thumbH)) + 'px';
+  }
+
   function pfCloseAll() {
     document.querySelectorAll('.pf-drop.is-open').forEach(function (drop) {
+      var list = drop.querySelector('.pf-drop-list');
+      if (list) list.scrollTop = 0;
+      var sb = drop.querySelector('.pf-scrollbar');
+      if (sb) sb.classList.remove('is-visible');
+      // Reset search
+      var noResults = drop.querySelector('.pf-drop-no-results');
+      if (noResults) noResults.classList.remove('is-visible');
+      var dropList = drop.querySelector('.pf-drop-list');
+      if (dropList) dropList.style.display = '';
+      drop.querySelectorAll('.pf-drop-item').forEach(function (i) { i.style.display = ''; });
       drop.classList.remove('is-open', 'pf-drop--up');
       var wrap = drop.closest('.pf-wrap[data-pf]');
       if (!wrap) return;
+      var searchInput = wrap.querySelector('.pf-search');
+      if (searchInput) { searchInput.value = ''; searchInput.tabIndex = -1; }
       wrap.querySelector('.pf-input').classList.remove('pf-input--open');
       var chev = wrap.querySelector('.pf-chev');
       if (chev) chev.src = 'assets/chevron-down-field.svg';
@@ -1130,6 +1170,9 @@ document.querySelectorAll('.flag, .flag-m').forEach(function(f){
 
   document.addEventListener('click', function (e) {
     // Toggle dropdown on input click
+    // Clicking inside search input should not toggle dropdown
+    if (e.target.closest('.pf-search')) { e.stopPropagation(); return; }
+
     var input = e.target.closest('.pf-wrap[data-pf] .pf-input');
     if (input) {
       e.stopPropagation();
@@ -1142,7 +1185,7 @@ document.querySelectorAll('.flag, .flag-m').forEach(function(f){
         // Show temporarily to measure height
         drop.style.visibility = 'hidden';
         drop.style.display = 'flex';
-        var dropH = drop.scrollHeight;
+        var dropH = drop.offsetHeight;
         drop.style.display = '';
         drop.style.visibility = '';
         var inputRect = input.getBoundingClientRect();
@@ -1153,6 +1196,14 @@ document.querySelectorAll('.flag, .flag-m').forEach(function(f){
         drop.classList.add('is-open');
         input.classList.add('pf-input--open');
         if (chev) chev.src = 'assets/chevron-up-field.svg';
+        var searchInput = wrap.querySelector('.pf-search');
+        if (searchInput) {
+          searchInput.value = wrap.querySelector('.pf-value').textContent.trim();
+          searchInput.tabIndex = 0;
+          searchInput.focus();
+          searchInput.select();
+        }
+        pfUpdateScrollbar(drop);
       }
       return;
     }
@@ -1181,6 +1232,8 @@ document.querySelectorAll('.flag, .flag-m').forEach(function(f){
       newChk.className = 'pf-drop-check';
       newChk.alt = '';
       countryItem.appendChild(newChk);
+      var dropList = countryItem.closest('.pf-drop-list');
+      dropList.insertBefore(countryItem, dropList.firstElementChild);
       pfCloseAll();
       return;
     }
@@ -1212,6 +1265,72 @@ document.querySelectorAll('.flag, .flag-m').forEach(function(f){
     if (!e.target.closest('.pf-wrap[data-pf]')) {
       pfCloseAll();
     }
+  });
+
+  // Search / filter
+  document.addEventListener('input', function(e) {
+    if (!e.target.classList.contains('pf-search')) return;
+    var wrap = e.target.closest('.pf-wrap[data-pf]');
+    if (!wrap) return;
+    var drop = wrap.querySelector('.pf-drop');
+    if (!drop) return;
+    var query = e.target.value.toLowerCase().trim();
+    var hasMatch = false;
+    drop.querySelectorAll('.pf-drop-item').forEach(function(item) {
+      var name = item.querySelector('.pf-drop-name');
+      if (!name) return;
+      var match = !query || name.textContent.toLowerCase().includes(query);
+      item.style.display = match ? '' : 'none';
+      if (match) hasMatch = true;
+    });
+    var dropList = drop.querySelector('.pf-drop-list');
+    if (dropList) dropList.style.display = hasMatch ? '' : 'none';
+    var noResults = drop.querySelector('.pf-drop-no-results');
+    if (noResults) noResults.classList.toggle('is-visible', !hasMatch);
+    var sb = drop.querySelector('.pf-scrollbar');
+    if (sb && !hasMatch) sb.classList.remove('is-visible');
+    if (hasMatch) pfUpdateScrollbar(drop);
+  });
+
+  // Custom scrollbar — update thumb position on scroll
+  document.addEventListener('scroll', function(e) {
+    var list = e.target;
+    if (!list.classList || !list.classList.contains('pf-drop-list')) return;
+    var drop = list.closest('.pf-drop');
+    if (drop) pfUpdateScrollbar(drop);
+  }, { passive: true, capture: true });
+
+  // Scrollbar drag
+  var pfDrag = null;
+
+  document.addEventListener('mousedown', function(e) {
+    var sb = e.target.closest('.pf-scrollbar');
+    if (!sb) return;
+    var drop = sb.closest('.pf-drop');
+    if (!drop) return;
+    var list = drop.querySelector('.pf-drop-list');
+    if (!list) return;
+    e.preventDefault();
+    sb.classList.add('is-dragging');
+    pfDrag = { list: list, drop: drop, sb: sb, startY: e.clientY, startScrollTop: list.scrollTop };
+    document.body.style.userSelect = 'none';
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (!pfDrag) return;
+    var list = pfDrag.list;
+    var ratio = list.clientHeight / list.scrollHeight;
+    var thumbH = Math.max(20, ratio * TRACK_H);
+    var delta = e.clientY - pfDrag.startY;
+    list.scrollTop = pfDrag.startScrollTop + delta / (TRACK_H - thumbH) * (list.scrollHeight - list.clientHeight);
+    pfUpdateScrollbar(pfDrag.drop);
+  });
+
+  document.addEventListener('mouseup', function() {
+    if (!pfDrag) return;
+    pfDrag.sb.classList.remove('is-dragging');
+    pfDrag = null;
+    document.body.style.userSelect = '';
   });
 })();
 
@@ -1344,5 +1463,17 @@ document.querySelectorAll('.flag, .flag-m').forEach(function(f){
 <div data-include="partials/footer.html"></div>
 
 <script src="js/includes.js"></script>
+<script>
+(function(){
+  var DARK = '#0B0B0D', LIGHT = '#f0f0f0';
+  var h = document.documentElement;
+  function update() {
+    var atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+    h.style.background = atBottom ? DARK : LIGHT;
+  }
+  h.style.background = LIGHT;
+  window.addEventListener('scroll', update, { passive: true });
+})();
+</script>
 </body>
 </html>

@@ -1072,6 +1072,39 @@ height: 20px;
 flex-shrink: 0;
 display: block;
 }
+.pf-search {
+display: none;
+border: none;
+background: transparent;
+outline: none;
+caret-color: var(--border-accent);
+font-family: var(--font-sans);
+font-size: var(--text-h4-size);
+font-weight: 400;
+color: var(--text-primary);
+letter-spacing: var(--text-h4-tracking);
+line-height: var(--text-h4-line);
+padding: 0;
+margin: 0;
+width: 100%;
+min-width: 0;
+}
+.pf-input--open .pf-search { display: block; }
+.pf-input--open .pf-value { display: none; }
+.pf-drop-no-results {
+display: none;
+height: 44px;
+align-items: center;
+margin: 4px;
+padding: 10px 12px;
+font-family: var(--font-sans);
+font-size: 15px;
+line-height: 19px;
+color: var(--text-primary);
+box-sizing: border-box;
+border-radius: 12px;
+}
+.pf-drop-no-results.is-visible { display: flex; }
 
 /* Dropdown list */
 .pf-drop {
@@ -1149,6 +1182,17 @@ height: 24px;
 flex-shrink: 0;
 display: block;
 }
+/* Scrollable dropdown */
+.pf-drop--scroll { overflow: clip; padding: 0; }
+.pf-drop-list { overflow-y: auto; display: flex; flex-direction: column; gap: 4px; padding: 4px; max-height: 292px; scrollbar-width: none; }
+.pf-drop-list::-webkit-scrollbar { display: none; }
+.pf-scrollbar { position: absolute; bottom: -1px; right: -1px; width: 11px; height: 292px; pointer-events: auto; opacity: 0; transition: opacity 0.2s; padding: 10px 2px 10px 4px; box-sizing: border-box; cursor: grab; }
+.pf-scrollbar:active { cursor: grabbing; }
+.pf-scrollbar.is-visible { opacity: 1; }
+.pf-scrollbar-thumb { position: absolute; right: 2px; width: 5px; background: #d9d9dd; border-radius: 8px; transition: width 0.15s, background 0.15s; }
+.pf-scrollbar:hover .pf-scrollbar-thumb,
+.pf-scrollbar.is-dragging .pf-scrollbar-thumb { width: 7px; background: #c1c1c7; }
+
 /* Plan dropdown items (no flag/price) */
 .pf-drop--plan .pf-drop-item {
 gap: var(--space-200);
