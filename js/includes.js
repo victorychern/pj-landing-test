@@ -104,6 +104,14 @@ document.head.appendChild(_favicon);
     });
   });
 
+  // Overscroll canvas color: light at top, footer-dark at bottom
+  function _syncOverscrollBg() {
+    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+    document.documentElement.style.background = atBottom ? '#0B0B0D' : 'var(--bg-app)';
+  }
+  _syncOverscrollBg();
+  window.addEventListener('scroll', _syncOverscrollBg, { passive: true });
+
   // Hide header on scroll down, show on scroll up; hide when footer is visible
   const _headers = document.querySelectorAll('.site-header, .site-header-mobile');
   const _footer = document.getElementById('footer');

@@ -180,7 +180,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 
-html { background: #0B0B0D; }
+html { background: var(--bg-app); }
 
 body {
 background: var(--bg-app);

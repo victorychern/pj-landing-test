@@ -1,0 +1,123 @@
+/* ── Contact page ── */
+
+.cu-section {
+  width: 100%;
+  background: var(--bg-app);
+  padding: 140px 16px 100px;
+}
+
+.cu-inner {
+  max-width: 924px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Header */
+.cu-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.cu-title {
+  font-family: var(--font-sans-display);
+  font-size: var(--text-h1-size);
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h1-tracking);
+  line-height: var(--text-h1-line);
+  text-align: center;
+}
+
+/* Grid */
+.cu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.cu-row {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Cards */
+.cu-card {
+  flex: 1 0 0;
+  min-width: 0;
+  background: var(--bg-surface-1);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 232px;
+}
+
+.cu-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1 0 0;
+}
+
+.cu-card-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-h3-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h3-tracking);
+  line-height: var(--text-h3-line);
+}
+
+.cu-card-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+}
+
+.cu-card-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--action-primary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cu-card-link:hover {
+  text-decoration: underline;
+}
+
+/* Bottom note */
+.cu-note {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  text-align: center;
+  max-width: 720px;
+}
+
+/* Mobile */
+@media (max-width: 960px) {
+  .cu-section { padding: 100px 16px 80px; }
+  .cu-title { font-size: 28px; letter-spacing: -0.6px; }
+  .cu-row { flex-direction: column; }
+  .cu-card { min-height: unset; }
+}

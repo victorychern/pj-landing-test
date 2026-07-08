@@ -105,7 +105,7 @@
 <section class="am-section">
   <div class="am-inner">
 
-    <!-- Left: header + buttons -->
+    <!-- Left: header (always) + buttons (desktop only) -->
     <div class="am-left">
       <div class="am-header">
         <span class="about-badge">OUR MISSION</span>
@@ -137,6 +137,13 @@
     </div>
 
   </div>
+
+  <!-- Mobile buttons (below feature cards) -->
+  <div class="am-btns am-btns-m">
+    <button class="btn-primary">Get started</button>
+    <button class="btn-secondary-on-accent">View pricing</button>
+  </div>
+
 </section>
 
 
@@ -152,52 +159,84 @@
       <p class="aw-subtitle">ProxyJam is designed to make proxy access faster, clearer, and easier to manage from day one.</p>
     </div>
 
-    <div class="aw-grid">
-
-      <!-- Row 1 -->
-      <div class="aw-row">
-        <div class="aw-cell aw-cell--left">
-          <div class="aw-feat">
-            <div class="aw-feat-icon" style="background: var(--status-success-bg)">
-              <img src="assets/aw-icon-activation.svg" alt="">
+    <!-- Desktop: 2×2 grid -->
+    <div class="aw-desktop">
+      <div class="aw-grid">
+        <div class="aw-row">
+          <div class="aw-cell aw-cell--left">
+            <div class="aw-feat">
+              <div class="aw-feat-icon" style="background: var(--status-success-bg)">
+                <img src="assets/aw-icon-activation.svg" alt="">
+              </div>
+              <p class="aw-feat-title">Instant activation</p>
+              <p class="aw-feat-desc">Your proxy is provisioned automatically right after payment — no waiting for a manager.</p>
             </div>
-            <p class="aw-feat-title">Instant activation</p>
-            <p class="aw-feat-desc">Your proxy is provisioned automatically right after payment — no waiting for a manager.</p>
+          </div>
+          <div class="aw-cell aw-cell--right">
+            <div class="aw-feat">
+              <div class="aw-feat-icon" style="background: var(--status-warning-bg)">
+                <img src="assets/aw-icon-pricing.svg" alt="">
+              </div>
+              <p class="aw-feat-title">Transparent pricing</p>
+              <p class="aw-feat-desc">Pay with crypto or your internal wallet balance. The price you see is the price you pay.</p>
+            </div>
           </div>
         </div>
-        <div class="aw-cell aw-cell--right">
-          <div class="aw-feat">
-            <div class="aw-feat-icon" style="background: var(--status-warning-bg)">
-              <img src="assets/aw-icon-pricing.svg" alt="">
+        <div class="aw-row aw-row--top">
+          <div class="aw-cell aw-cell--left aw-cell--bottom">
+            <div class="aw-feat">
+              <div class="aw-feat-icon" style="background: var(--status-brand-bg)">
+                <img src="assets/aw-icon-service.svg" alt="">
+              </div>
+              <p class="aw-feat-title">Full self-service</p>
+              <p class="aw-feat-desc">Rotate IPs, switch protocols (HTTP/SOCKS5), track traffic usage, and renew — all from your dashboard.</p>
             </div>
-            <p class="aw-feat-title">Transparent pricing</p>
-            <p class="aw-feat-desc">Pay with crypto or your internal wallet balance. The price you see is the price you pay.</p>
+          </div>
+          <div class="aw-cell aw-cell--right aw-cell--bottom">
+            <div class="aw-feat">
+              <div class="aw-feat-icon" style="background: var(--status-error-bg)">
+                <img src="assets/aw-icon-dev.svg" alt="">
+              </div>
+              <p class="aw-feat-title">Built for developers too</p>
+              <p class="aw-feat-desc">REST API, SDK, and webhooks for teams that automate — with the same simple pricing.</p>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Row 2 -->
-      <div class="aw-row aw-row--top">
-        <div class="aw-cell aw-cell--left aw-cell--bottom">
-          <div class="aw-feat">
-            <div class="aw-feat-icon" style="background: var(--status-brand-bg)">
-              <img src="assets/aw-icon-service.svg" alt="">
-            </div>
-            <p class="aw-feat-title">Full self-service</p>
-            <p class="aw-feat-desc">Rotate IPs, switch protocols (HTTP/SOCKS5), track traffic usage, and renew — all from your dashboard.</p>
+    <!-- Mobile: stacked list -->
+    <div class="aw-mobile">
+      <div class="aw-list-m">
+        <div class="aw-feat-m">
+          <div class="aw-feat-icon" style="background: var(--status-success-bg)">
+            <img src="assets/aw-icon-activation.svg" alt="">
           </div>
+          <p class="aw-feat-title">Instant activation</p>
+          <p class="aw-feat-desc">Your proxy is provisioned automatically right after payment — no waiting for a manager.</p>
         </div>
-        <div class="aw-cell aw-cell--right aw-cell--bottom">
-          <div class="aw-feat">
-            <div class="aw-feat-icon" style="background: var(--status-error-bg)">
-              <img src="assets/aw-icon-dev.svg" alt="">
-            </div>
-            <p class="aw-feat-title">Built for developers too</p>
-            <p class="aw-feat-desc">REST API, SDK, and webhooks for teams that automate — with the same simple pricing.</p>
+        <div class="aw-feat-m">
+          <div class="aw-feat-icon" style="background: var(--status-warning-bg)">
+            <img src="assets/aw-icon-pricing.svg" alt="">
           </div>
+          <p class="aw-feat-title">Transparent pricing</p>
+          <p class="aw-feat-desc">Pay with crypto or your internal wallet balance. The price you see is the price you pay.</p>
+        </div>
+        <div class="aw-feat-m">
+          <div class="aw-feat-icon" style="background: var(--status-brand-bg)">
+            <img src="assets/aw-icon-service.svg" alt="">
+          </div>
+          <p class="aw-feat-title">Full self-service</p>
+          <p class="aw-feat-desc">Rotate IPs, switch protocols (HTTP/SOCKS5), track traffic usage, and renew — all from your dashboard.</p>
+        </div>
+        <div class="aw-feat-m">
+          <div class="aw-feat-icon" style="background: var(--status-error-bg)">
+            <img src="assets/aw-icon-dev.svg" alt="">
+          </div>
+          <p class="aw-feat-title">Built for developers too</p>
+          <p class="aw-feat-desc">REST API, SDK, and webhooks for teams that automate — with the same simple pricing.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -222,7 +261,7 @@
         <div class="ahiw-card">
           <div class="ahiw-step-label">Step 01</div>
           <div class="ahiw-illus" aria-hidden="true">
-            <img src="assets/hiw-illus-01.png" class="ahiw-illus-img ahiw-illus-img--carousel" alt="">
+            <img src="assets/hiw-illus-01-m.png" class="ahiw-illus-img ahiw-illus-img--carousel" alt="">
           </div>
           <p class="ahiw-card-text"><strong>Pick a plan.</strong> Choose the proxy type, location, and duration in the catalog.</p>
         </div>
@@ -254,7 +293,7 @@
         <div class="ahiw-card ahiw-card-m">
           <div class="ahiw-step-label">Step 01</div>
           <div class="ahiw-illus" aria-hidden="true">
-            <img src="assets/hiw-illus-01.png" class="ahiw-illus-img ahiw-illus-img--carousel" alt="">
+            <img src="assets/hiw-illus-01-m.png" class="ahiw-illus-img ahiw-illus-img--carousel" alt="">
           </div>
           <p class="ahiw-card-text"><strong>Pick a plan.</strong> Choose the proxy type, location, and duration in the catalog.</p>
         </div>
@@ -277,6 +316,45 @@
 
       </div>
       <button class="btn-primary ahiw-btn-m">Get started</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SOCIAL — Stay connected with ProxyJam
+══════════════════════════════════════ -->
+<section class="sc-section">
+  <div class="sc-inner">
+
+    <div class="sc-header">
+      <span class="about-badge">FOLLOW US</span>
+      <h2 class="sc-title">Stay connected with ProxyJam</h2>
+      <p class="sc-subtitle">Follow us for product updates, new launches, and tips on getting more from your proxies.</p>
+    </div>
+
+    <div class="sc-btns">
+      <a href="#" class="sc-btn">
+        <img src="assets/sc-icon-tg.svg" class="sc-btn-icon" alt="">
+        <span class="sc-btn-label">Telegram</span>
+      </a>
+      <a href="#" class="sc-btn">
+        <img src="assets/sc-icon-x.svg" class="sc-btn-icon" alt="">
+        <span class="sc-btn-label">X.com</span>
+      </a>
+      <a href="#" class="sc-btn">
+        <img src="assets/sc-icon-ln.svg" class="sc-btn-icon" alt="">
+        <span class="sc-btn-label">LinkedIn</span>
+      </a>
+      <a href="#" class="sc-btn">
+        <img src="assets/sc-icon-gh.svg" class="sc-btn-icon" alt="">
+        <span class="sc-btn-label">GitHub</span>
+      </a>
+      <a href="#" class="sc-btn">
+        <img src="assets/sc-icon-discord.svg" class="sc-btn-icon" alt="">
+        <span class="sc-btn-label">Discord</span>
+      </a>
     </div>
 
   </div>
