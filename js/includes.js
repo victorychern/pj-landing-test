@@ -104,18 +104,21 @@ document.head.appendChild(_favicon);
     });
   });
 
-  // Overscroll canvas color: light at top, footer-dark at bottom
-  function _syncOverscrollBg() {
-    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
-    document.documentElement.style.background = atBottom ? '#0B0B0D' : 'var(--bg-app)';
-  }
-  _syncOverscrollBg();
-  window.addEventListener('scroll', _syncOverscrollBg, { passive: true });
-
   // Hide header on scroll down, show on scroll up; hide when footer is visible
   const _headers = document.querySelectorAll('.site-header, .site-header-mobile');
   const _footer = document.getElementById('footer');
   let _lastY = window.scrollY;
+
+  // Overscroll canvas color: CSS paints a viewport-fixed light/dark gradient (common.css).
+  // Fallback for browsers that only use the root background-color for the rubber-band
+  // canvas: flip it the moment the footer enters view — hundreds of px before the page
+  // edge is reachable, so even the fastest scroll can't catch a wrong color.
+  if (_footer && 'IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      document.documentElement.style.backgroundColor =
+        entries[0].isIntersecting ? 'var(--color-neutral-5)' : '';
+    }).observe(_footer);
+  }
 
   window.addEventListener('scroll', () => {
     const y = window.scrollY;

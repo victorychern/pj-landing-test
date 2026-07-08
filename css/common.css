@@ -201,7 +201,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 
-html { background: var(--bg-app); }
+/* Overscroll canvas: light when rubber-banding at top, footer-dark at bottom.
+   The viewport-fixed gradient paints the rubber-band canvas: whatever is revealed
+   above the page is light, below is dark. No JS, so fast scroll can't flash. */
+html {
+  background-color: var(--bg-app);
+  background-image: linear-gradient(to bottom, var(--bg-app) 50%, var(--color-neutral-5) 50%);
+  background-attachment: fixed;
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+}
 
 body {
 background: var(--bg-app);

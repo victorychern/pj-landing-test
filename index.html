@@ -1288,17 +1288,5 @@ document.querySelectorAll('.flag, .flag-m').forEach(function(f){
 <div data-include="partials/footer.html"></div>
 
 <script src="js/includes.js"></script>
-<script>
-(function(){
-  var DARK = '#0B0B0D', LIGHT = '#f0f0f0';
-  var h = document.documentElement;
-  function update() {
-    var atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
-    h.style.background = atBottom ? DARK : LIGHT;
-  }
-  h.style.background = LIGHT;
-  window.addEventListener('scroll', update, { passive: true });
-})();
-</script>
 </body>
 </html>
