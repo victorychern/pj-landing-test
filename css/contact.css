@@ -3,7 +3,7 @@
 .cu-section {
   width: 100%;
   background: var(--bg-app);
-  padding: 140px var(--space-400) 100px;
+  padding: var(--hero-pad-top) var(--page-gutter) var(--section-pad);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,7 +51,7 @@
   flex: 1 0 0;
   min-width: 0;
   background: var(--bg-surface-1);
-  border-radius: 24px;
+  border-radius: var(--radius-600);
   padding: var(--space-600);
   display: flex;
   flex-direction: column;
@@ -121,7 +121,7 @@
 .cf-section {
   width: 100%;
   background: var(--bg-app);
-  padding: 100px var(--space-400);
+  padding: var(--section-pad) var(--page-gutter);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,7 +144,7 @@
 /* Form card */
 .cf-card {
   background: var(--bg-surface-1);
-  border-radius: 24px;
+  border-radius: var(--radius-600);
   padding: var(--space-800) var(--space-600);
   display: flex;
   flex-direction: column;
@@ -154,125 +154,14 @@
   max-width: 450px;
 }
 
-/* Fields */
+/* Fields — shared .sel-* field component (common.css / js/fields.js) */
 .cf-fields {
   display: flex;
   flex-direction: column;
   gap: var(--space-300);
   width: 100%;
 }
-
-/* Field wrapper — positioning context for floating label */
-.cf-field {
-  position: relative;
-  width: 100%;
-}
-
-.cf-input {
-  width: 100%;
-  height: 52px;
-  background: var(--bg-subtle);
-  border: 1.5px solid transparent;
-  border-radius: var(--radius-400);
-  padding: 20px var(--space-300) 5px;
-  font-family: var(--font-sans);
-  font-size: var(--text-h4-size);
-  font-weight: 400;
-  color: var(--text-primary);
-  letter-spacing: var(--text-h4-tracking);
-  line-height: var(--text-h4-line);
-  outline: none;
-  appearance: none;
-  -webkit-appearance: none;
-  box-sizing: border-box;
-  transition: background 0.12s, border-color 0.12s;
-}
-
-/* Hide real placeholder — .cf-label acts as the visual placeholder */
-.cf-input::placeholder { color: transparent; }
-
-.cf-input:hover:not(:focus) { background: var(--bg-subtle-hover); }
-.cf-input:focus {
-  background: var(--bg-surface-1);
-  border-color: var(--border-accent);
-}
-
-/* Floating label */
-.cf-label {
-  position: absolute;
-  left: var(--space-300);
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--font-sans);
-  font-size: var(--text-h4-size);
-  font-weight: 400;
-  color: var(--text-disabled);
-  letter-spacing: var(--text-h4-tracking);
-  line-height: var(--text-h4-line);
-  pointer-events: none;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: calc(100% - var(--space-600));
-  transition:
-    top 0.15s ease,
-    transform 0.15s ease,
-    font-size 0.15s ease,
-    font-weight 0.15s ease,
-    letter-spacing 0.15s ease,
-    color 0.15s ease;
-}
-
-/* Float state — input focused or has value */
-input.cf-input:focus ~ .cf-label,
-input.cf-input:not(:placeholder-shown) ~ .cf-label {
-  top: var(--space-200);
-  transform: translateY(0);
-  font-size: var(--text-label-size);
-  font-weight: 500;
-  letter-spacing: var(--text-label-tracking);
-  color: var(--text-secondary);
-  text-transform: uppercase;
-}
-
-/* Float state — select focused or filled (via JS) */
-.cf-select:focus ~ .cf-label,
-.cf-select.is-filled ~ .cf-label {
-  top: var(--space-200);
-  transform: translateY(0);
-  font-size: var(--text-label-size);
-  font-weight: 500;
-  letter-spacing: var(--text-label-tracking);
-  color: var(--text-secondary);
-  text-transform: uppercase;
-}
-
-/* Select */
-.cf-select-wrap { position: relative; width: 100%; }
-.cf-select {
-  cursor: pointer;
-  padding-right: 36px;
-}
-/* Hide select value text when nothing is chosen — label serves as placeholder */
-.cf-select:not(.is-filled):not(:focus) { color: transparent; }
-
-.cf-chevron {
-  position: absolute;
-  right: var(--space-300);
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Textarea — no floating label, standard placeholder */
-.cf-textarea {
-  height: 160px;
-  padding: 14px var(--space-300) var(--space-200);
-  resize: none;
-}
-.cf-textarea::placeholder { color: var(--text-disabled); }
+.cf-fields > .sel-wrap { flex: none; width: 100%; }
 
 /* Submit — full width */
 .cf-submit { width: 100%; }
@@ -292,9 +181,10 @@ input.cf-input:not(:placeholder-shown) ~ .cf-label {
 
 /* Mobile */
 @media (max-width: 960px) {
-  .cu-section { padding: 100px var(--space-400) 80px; gap: var(--space-600); }
-  .cu-title { font-size: 28px; letter-spacing: -0.6px; line-height: 34px; }
+  .cu-section { gap: var(--space-600); }
+  .cu-title { font-size: var(--text-h1-m-size); letter-spacing: var(--text-h1-m-tracking); line-height: var(--text-h1-m-line); }
   .cu-row { flex-direction: column; }
-  .cu-card { height: auto; min-height: 0; }
-  .cf-section { padding: 80px var(--space-400); }
+  .cu-card { flex: none; height: auto; padding: var(--space-500); }
+  .cu-card-content { flex: none; min-height: auto; }
+  .cf-card { padding: var(--space-800) var(--space-500); }
 }

@@ -90,29 +90,51 @@
   <div class="cf-card">
     <div class="cf-fields">
 
-      <div class="cf-field">
-        <input class="cf-input" type="text" id="cf-name" placeholder=" " autocomplete="name">
-        <label class="cf-label" for="cf-name">Your name</label>
+      <!-- Text field -->
+      <label class="sel-wrap sel-wrap--text">
+        <span class="sel-input">
+          <span class="sel-text">
+            <span class="sel-label">Your name</span>
+            <input class="sel-field" type="text" placeholder="Your name" autocomplete="name">
+          </span>
+        </span>
+      </label>
+
+      <label class="sel-wrap sel-wrap--text">
+        <span class="sel-input">
+          <span class="sel-text">
+            <span class="sel-label">Email address</span>
+            <input class="sel-field" type="email" placeholder="Email address" autocomplete="email">
+          </span>
+        </span>
+      </label>
+
+      <!-- Select (custom dropdown, js/fields.js) -->
+      <div class="sel-wrap sel-wrap--empty" data-sel="cf-topic">
+        <div class="sel-input">
+          <div class="sel-text">
+            <span class="sel-label">Topic</span>
+            <span class="sel-value"></span>
+          </div>
+          <img class="sel-chev" src="assets/chevron-down-field.svg" alt="">
+        </div>
+        <div class="sel-drop sel-drop--plan" id="seldrop-cf-topic">
+          <div class="sel-drop-item sel-drop-item--sm"><span class="sel-drop-name">Billing</span></div>
+          <div class="sel-drop-item sel-drop-item--sm"><span class="sel-drop-name">Technical support</span></div>
+          <div class="sel-drop-item sel-drop-item--sm"><span class="sel-drop-name">Sales &amp; partnerships</span></div>
+          <div class="sel-drop-item sel-drop-item--sm"><span class="sel-drop-name">Other</span></div>
+        </div>
       </div>
 
-      <div class="cf-field">
-        <input class="cf-input" type="email" id="cf-email" placeholder=" " autocomplete="email">
-        <label class="cf-label" for="cf-email">Email address</label>
-      </div>
-
-      <div class="cf-field cf-select-wrap">
-        <select class="cf-input cf-select" id="cf-topic" required>
-          <option value="" disabled selected></option>
-          <option value="billing">Billing</option>
-          <option value="support">Technical support</option>
-          <option value="sales">Sales &amp; partnerships</option>
-          <option value="other">Other</option>
-        </select>
-        <label class="cf-label" for="cf-topic">Topic</label>
-        <img class="cf-chevron" src="assets/chevron-down-field.svg" alt="">
-      </div>
-
-      <textarea class="cf-input cf-textarea" placeholder="How can we help you?"></textarea>
+      <!-- Textarea -->
+      <label class="sel-wrap sel-wrap--text">
+        <span class="sel-input sel-input--area">
+          <span class="sel-text">
+            <span class="sel-label">How can we help you?</span>
+            <textarea class="sel-field" placeholder="How can we help you?"></textarea>
+          </span>
+        </span>
+      </label>
 
     </div>
     <button class="btn-primary btn-xl cf-submit">Send message</button>
@@ -122,15 +144,82 @@
 </section>
 
 
+<!-- ══════════════════════════════════
+     FAQ
+══════════════════════════════════ -->
+<section class="cf-section">
+  <div class="faq-section">
+    <div class="faq-header">
+      <span class="section-label">FAQ</span>
+      <h2 class="faq-title">Frequently asked questions</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">How fast does support reply?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">We're online 24/7. Average first reply time is under 1 hour, including weekends and holidays.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">My proxy isn't working — what should I do?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Contact support with your order ID and a description of the issue. Our team will diagnose and resolve it or issue a replacement.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">What payment methods do you accept?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">We accept all major credit and debit cards, PayPal, and popular cryptocurrencies.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">Can I get a refund?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Please review our pricing and policy pages for the latest information on refund eligibility and terms.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">Do you offer volume discounts or reseller terms?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Yes. Reach out to our sales team for volume pricing and reseller terms tailored to your business.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">Where can I find API documentation?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Our REST API is fully documented, with an interactive Swagger explorer available in your dashboard.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">How do I report abuse?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Email support@proxyjam.com with details of the abuse and any relevant logs — our team will investigate promptly.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <div data-include="partials/footer.html"></div>
 
 <script src="js/includes.js"></script>
-<script>
-  document.querySelectorAll('.cf-select').forEach(function(sel) {
-    function update() { sel.classList.toggle('is-filled', sel.value !== ''); }
-    sel.addEventListener('change', update);
-    update();
-  });
-</script>
+<script src="js/fields.js"></script>
+<script src="js/faq.js"></script>
 </body>
 </html>

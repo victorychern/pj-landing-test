@@ -5,7 +5,7 @@
 .about-hero {
   width: 100%;
   max-width: 1440px;
-  padding: 140px clamp(16px, calc((100vw - 1164px) / 2), 138px) 100px;
+  padding: var(--hero-pad-top) var(--page-gutter) var(--section-pad);
   display: flex;
   flex-direction: column;
   gap: var(--space-800);
@@ -73,7 +73,7 @@
   left: 0;
   right: 0;
   height: 274px;
-  background: linear-gradient(180deg, rgba(239,239,241,0) 0%, #efeff1 100%);
+  background: linear-gradient(180deg, rgba(239,239,241,0) 0%, var(--bg-app) 100%);
   pointer-events: none;
   z-index: 2;
 }
@@ -86,7 +86,7 @@
   gap: var(--space-150);
   padding: var(--space-200) var(--space-300) var(--space-200) var(--space-200);
   background: var(--text-primary);
-  border-radius: 12px;
+  border-radius: var(--radius-300);
   box-shadow: 0 4px 6px rgba(26,29,81,0.06);
   z-index: 3;
 }
@@ -118,7 +118,6 @@
 
 @media (max-width: 960px) {
   /* hero */
-  .about-hero { padding: 140px var(--space-400) 80px; }
 
   /* globe */
   .about-earth {
@@ -165,7 +164,7 @@
 .aw-section {
   width: 100%;
   background: var(--bg-app);
-  padding: 100px clamp(16px, calc((100vw - 1164px) / 2), 138px);
+  padding: var(--section-pad) var(--page-gutter);
 }
 .aw-inner {
   max-width: 1164px;
@@ -227,7 +226,7 @@
 .aw-feat-icon {
   width: 36px;
   height: 36px;
-  border-radius: 12px;
+  border-radius: var(--radius-300);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -271,7 +270,6 @@
 .aw-feat-m:last-child { border-bottom: none; }
 
 @media (max-width: 960px) {
-  .aw-section { padding: 80px var(--space-400); }
   .aw-desktop { display: none; }
   .aw-mobile  { display: block; width: 100%; }
 }
@@ -282,7 +280,7 @@
 .am-section {
   width: 100%;
   background: var(--bg-app);
-  padding: 100px clamp(16px, calc((100vw - 1164px) / 2), 138px);
+  padding: var(--section-pad) var(--page-gutter);
 }
 .am-inner {
   max-width: 1164px;
@@ -365,7 +363,6 @@
 
 @media (max-width: 960px) {
   .am-section {
-    padding: 60px var(--space-400);
     display: flex;
     flex-direction: column;
     gap: var(--space-800);
@@ -403,7 +400,7 @@
 .an-section {
   width: 100%;
   background: linear-gradient(180deg, rgba(119,127,251,0.2) 0%, rgba(239,239,241,0) 100%), var(--bg-app);
-  padding: 100px clamp(16px, calc((100vw - 1164px) / 2), 138px);
+  padding: var(--section-pad) var(--page-gutter);
 }
 .an-inner {
   max-width: 1164px;
@@ -448,7 +445,7 @@
   font-weight: 600;
   line-height: 1;
   letter-spacing: var(--text-h1-tracking);
-  background: linear-gradient(180deg, #777ffb 0%, #afb3ed 100%);
+  background: linear-gradient(180deg, var(--color-indigo-75) 0%, #afb3ed 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -464,13 +461,12 @@
 .an-divider {
   width: 1px;
   height: 39px;
-  background: #777ffb;
+  background: var(--color-indigo-75);
   opacity: 0.2;
   flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
-  .an-section { padding: 60px var(--space-400); }
   .an-stats { flex-wrap: wrap; gap: var(--space-800) 0; }
   .an-stat { flex: 1 1 50%; }
   .an-divider { display: none; }
@@ -483,7 +479,7 @@
 .ahiw-section {
   width: 100%;
   background: var(--bg-app);
-  padding: 100px clamp(16px, calc((100vw - 1164px) / 2), 138px);
+  padding: var(--section-pad) var(--page-gutter);
 }
 .ahiw-inner {
   max-width: 1164px;
@@ -533,8 +529,8 @@
   flex: 1 1 0;
   min-width: 0;
   height: 378px;
-  background: rgba(119, 127, 251, 0.1);
-  border-radius: 24px;
+  background: var(--status-brand-bg);
+  border-radius: var(--radius-600);
   padding: var(--space-600);
   display: flex;
   flex-direction: column;
@@ -550,7 +546,7 @@
   height: 40px;
   padding: 10px var(--space-400);
   background: var(--bg-surface-2);
-  border-radius: 12px;
+  border-radius: var(--radius-300);
   font-family: var(--font-sans);
   font-size: var(--text-h4-size);
   font-weight: 500;
@@ -630,8 +626,8 @@
 }
 
 @media (max-width: 960px) {
-  .ahiw-section { padding: 80px var(--space-400); }
-  .ahiw-title { font-size: 28px; letter-spacing: -0.6px; }
+  .ahiw-title { font-size: var(--text-h1-m-size); letter-spacing: var(--text-h1-m-tracking); }
+  .ahiw-card { padding: var(--space-500); }
   .ahiw-desktop { display: none; }
   .ahiw-mobile {
     display: flex;
@@ -648,7 +644,7 @@
 .sc-section {
   width: 100%;
   background: var(--bg-app);
-  padding: 100px clamp(16px, calc((100vw - 1164px) / 2), 138px);
+  padding: var(--section-pad) var(--page-gutter);
 }
 .sc-inner {
   max-width: 1164px;
@@ -725,8 +721,7 @@
 }
 
 @media (max-width: 960px) {
-  .sc-section { padding: 80px var(--space-400); }
-  .sc-title { font-size: 28px; letter-spacing: -0.6px; }
+  .sc-title { font-size: var(--text-h1-m-size); letter-spacing: var(--text-h1-m-tracking); }
   .sc-btns { max-width: 442px; }
   .sc-btn { flex: 0 0 auto; }
 }
