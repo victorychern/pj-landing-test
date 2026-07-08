@@ -19,10 +19,9 @@
      HERO — Contact ProxyJam
 ══════════════════════════════════ -->
 <section class="cu-section">
-  <div class="cu-inner">
 
     <div class="cu-header">
-      <span class="about-badge">HOW TO REACH US</span>
+      <span class="section-label">HOW TO REACH US</span>
       <h1 class="cu-title">Contact ProxyJam</h1>
     </div>
 
@@ -65,7 +64,7 @@
             <p class="cu-card-title">Live chat</p>
             <p class="cu-card-desc">Available right in your dashboard for existing customers.</p>
           </div>
-          <button class="btn-primary">Start chat</button>
+          <button class="btn-primary btn-m">Start chat</button>
         </div>
 
       </div>
@@ -74,12 +73,64 @@
 
     <p class="cu-note">We are online 24/7, including weekends and holidays. Average first reply: under 1 hour.</p>
 
+</section>
+
+
+<!-- ══════════════════════════════════
+     FORM — Send us a message
+══════════════════════════════════ -->
+<section class="cf-section">
+
+  <div class="cu-header cf-header">
+    <span class="section-label">CONTACT PROXYJAM</span>
+    <h2 class="cu-title">Send us a message</h2>
+    <p class="cf-subtitle">Questions about residential, datacenter, or mobile rotating proxies? Our team is here around the clock — pick any channel below and we'll get back to you fast.</p>
   </div>
+
+  <div class="cf-card">
+    <div class="cf-fields">
+
+      <div class="cf-field">
+        <input class="cf-input" type="text" id="cf-name" placeholder=" " autocomplete="name">
+        <label class="cf-label" for="cf-name">Your name</label>
+      </div>
+
+      <div class="cf-field">
+        <input class="cf-input" type="email" id="cf-email" placeholder=" " autocomplete="email">
+        <label class="cf-label" for="cf-email">Email address</label>
+      </div>
+
+      <div class="cf-field cf-select-wrap">
+        <select class="cf-input cf-select" id="cf-topic" required>
+          <option value="" disabled selected></option>
+          <option value="billing">Billing</option>
+          <option value="support">Technical support</option>
+          <option value="sales">Sales &amp; partnerships</option>
+          <option value="other">Other</option>
+        </select>
+        <label class="cf-label" for="cf-topic">Topic</label>
+        <img class="cf-chevron" src="assets/chevron-down-field.svg" alt="">
+      </div>
+
+      <textarea class="cf-input cf-textarea" placeholder="How can we help you?"></textarea>
+
+    </div>
+    <button class="btn-primary btn-xl cf-submit">Send message</button>
+    <p class="cf-legal">By clicking, you agree to our <a href="#" class="cf-legal-link">Terms &amp; Conditions</a>,<br><a href="#" class="cf-legal-link">Privacy Policy</a></p>
+  </div>
+
 </section>
 
 
 <div data-include="partials/footer.html"></div>
 
 <script src="js/includes.js"></script>
+<script>
+  document.querySelectorAll('.cf-select').forEach(function(sel) {
+    function update() { sel.classList.toggle('is-filled', sel.value !== ''); }
+    sel.addEventListener('change', update);
+    update();
+  });
+</script>
 </body>
 </html>

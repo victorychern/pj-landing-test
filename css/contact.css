@@ -3,25 +3,21 @@
 .cu-section {
   width: 100%;
   background: var(--bg-app);
-  padding: 140px 16px 100px;
-}
-
-.cu-inner {
-  max-width: 924px;
-  margin: 0 auto;
+  padding: 140px var(--space-400) 100px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
   align-items: center;
+  gap: var(--space-800);
 }
 
 /* Header */
 .cu-header {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--space-400);
   align-items: center;
   width: 100%;
+  max-width: 924px;
 }
 
 .cu-title {
@@ -38,14 +34,16 @@
 .cu-grid {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--space-600);
   width: 100%;
+  max-width: 924px;
 }
 
 .cu-row {
   display: flex;
-  gap: 24px;
+  gap: var(--space-600);
   width: 100%;
+  align-items: flex-start;
 }
 
 /* Cards */
@@ -54,19 +52,22 @@
   min-width: 0;
   background: var(--bg-surface-1);
   border-radius: 24px;
-  padding: 32px;
+  padding: var(--space-600);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 32px;
-  min-height: 232px;
+  gap: var(--space-800);
+  align-items: flex-start;
+  height: 232px;
 }
 
 .cu-card-content {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--space-600);
+  align-items: flex-start;
   flex: 1 0 0;
+  min-height: 0;
+  width: 100%;
 }
 
 .cu-card-title {
@@ -96,11 +97,12 @@
   line-height: var(--text-h4-line);
   text-decoration: none;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.cu-card-link:hover {
-  text-decoration: underline;
-}
+.cu-card-link:hover { text-decoration: underline; }
+
+.cu-card .btn-primary { flex-shrink: 0; }
 
 /* Bottom note */
 .cu-note {
@@ -112,12 +114,187 @@
   line-height: var(--text-h4-line);
   text-align: center;
   max-width: 720px;
+  width: 100%;
 }
+
+/* ── Contact form section ── */
+.cf-section {
+  width: 100%;
+  background: var(--bg-app);
+  padding: 100px var(--space-400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-600);
+}
+
+/* Narrow header — 674px instead of 924px */
+.cf-section .cu-header { max-width: 674px; }
+
+.cf-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  text-align: center;
+}
+
+/* Form card */
+.cf-card {
+  background: var(--bg-surface-1);
+  border-radius: 24px;
+  padding: var(--space-800) var(--space-600);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-600);
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+}
+
+/* Fields */
+.cf-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  width: 100%;
+}
+
+/* Field wrapper — positioning context for floating label */
+.cf-field {
+  position: relative;
+  width: 100%;
+}
+
+.cf-input {
+  width: 100%;
+  height: 52px;
+  background: var(--bg-subtle);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-400);
+  padding: 20px var(--space-300) 5px;
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+/* Hide real placeholder — .cf-label acts as the visual placeholder */
+.cf-input::placeholder { color: transparent; }
+
+.cf-input:hover:not(:focus) { background: var(--bg-subtle-hover); }
+.cf-input:focus {
+  background: var(--bg-surface-1);
+  border-color: var(--border-accent);
+}
+
+/* Floating label */
+.cf-label {
+  position: absolute;
+  left: var(--space-300);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-disabled);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: calc(100% - var(--space-600));
+  transition:
+    top 0.15s ease,
+    transform 0.15s ease,
+    font-size 0.15s ease,
+    font-weight 0.15s ease,
+    letter-spacing 0.15s ease,
+    color 0.15s ease;
+}
+
+/* Float state — input focused or has value */
+input.cf-input:focus ~ .cf-label,
+input.cf-input:not(:placeholder-shown) ~ .cf-label {
+  top: var(--space-200);
+  transform: translateY(0);
+  font-size: var(--text-label-size);
+  font-weight: 500;
+  letter-spacing: var(--text-label-tracking);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+/* Float state — select focused or filled (via JS) */
+.cf-select:focus ~ .cf-label,
+.cf-select.is-filled ~ .cf-label {
+  top: var(--space-200);
+  transform: translateY(0);
+  font-size: var(--text-label-size);
+  font-weight: 500;
+  letter-spacing: var(--text-label-tracking);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+/* Select */
+.cf-select-wrap { position: relative; width: 100%; }
+.cf-select {
+  cursor: pointer;
+  padding-right: 36px;
+}
+/* Hide select value text when nothing is chosen — label serves as placeholder */
+.cf-select:not(.is-filled):not(:focus) { color: transparent; }
+
+.cf-chevron {
+  position: absolute;
+  right: var(--space-300);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Textarea — no floating label, standard placeholder */
+.cf-textarea {
+  height: 160px;
+  padding: 14px var(--space-300) var(--space-200);
+  resize: none;
+}
+.cf-textarea::placeholder { color: var(--text-disabled); }
+
+/* Submit — full width */
+.cf-submit { width: 100%; }
+
+/* Legal */
+.cf-legal {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-s-size);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: var(--text-body-s-tracking);
+  line-height: var(--text-body-s-line);
+  text-align: center;
+}
+.cf-legal-link { color: var(--action-primary); text-decoration: none; }
+.cf-legal-link:hover { text-decoration: underline; }
 
 /* Mobile */
 @media (max-width: 960px) {
-  .cu-section { padding: 100px 16px 80px; }
-  .cu-title { font-size: 28px; letter-spacing: -0.6px; }
+  .cu-section { padding: 100px var(--space-400) 80px; gap: var(--space-600); }
+  .cu-title { font-size: 28px; letter-spacing: -0.6px; line-height: 34px; }
   .cu-row { flex-direction: column; }
-  .cu-card { min-height: unset; }
+  .cu-card { height: auto; min-height: 0; }
+  .cf-section { padding: 80px var(--space-400); }
 }
