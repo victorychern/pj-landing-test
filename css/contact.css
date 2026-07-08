@@ -139,6 +139,7 @@
   letter-spacing: var(--text-h4-tracking);
   line-height: var(--text-h4-line);
   text-align: center;
+  max-width: 674px;
 }
 
 /* Form card */
@@ -183,8 +184,11 @@
 @media (max-width: 960px) {
   .cu-section { gap: var(--space-600); }
   .cu-title { font-size: var(--text-h1-m-size); letter-spacing: var(--text-h1-m-tracking); line-height: var(--text-h1-m-line); }
+  /* Same mobile column width as .faq-list */
+  .cu-grid { max-width: 442px; }
   .cu-row { flex-direction: column; }
-  .cu-card { flex: none; height: auto; padding: var(--space-500); }
+  .cu-card { flex: none; height: auto; padding: var(--space-500); width: 100%; }
   .cu-card-content { flex: none; min-height: auto; }
+  .cu-note { max-width: 442px; }
   .cf-card { padding: var(--space-800) var(--space-500); }
 }
