@@ -318,17 +318,6 @@ background: linear-gradient(
 pointer-events: none;
 mix-blend-mode: screen;
 }
-/* Chromatic dispersion on edges — Dispersion 48 */
-.site-header-bg::after {
-content: '';
-position: absolute;
-inset: 0;
-border-radius: inherit;
-box-shadow:
-  -1px 0 0 rgba(255,100,100,0.09),
-   1px 0 0 rgba(100,170,255,0.09);
-pointer-events: none;
-}
 .site-header-left {
 display: flex;
 align-items: center;
