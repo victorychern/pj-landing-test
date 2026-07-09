@@ -445,7 +445,7 @@
   font-weight: 600;
   line-height: 1;
   letter-spacing: var(--text-h1-tracking);
-  background: linear-gradient(180deg, var(--color-indigo-75) 0%, #afb3ed 100%);
+  background: var(--gradient-brand-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -498,11 +498,11 @@
 }
 .ahiw-title {
   font-family: var(--font-sans-display);
-  font-size: 40px;
+  font-size: var(--text-display-size);
   font-weight: 500;
   color: var(--text-primary);
-  letter-spacing: -0.8px;
-  line-height: 1.1;
+  letter-spacing: var(--text-display-tracking);
+  line-height: var(--text-display-line);
   text-align: center;
   max-width: 966px;
 }
@@ -696,7 +696,7 @@
   justify-content: center;
   padding: var(--space-300) 14px var(--space-300) var(--space-300);
   background: var(--bg-surface-1);
-  border-radius: 40px;
+  border-radius: var(--radius-full);
   text-decoration: none;
   flex: 1 0 0;
   min-width: 0;

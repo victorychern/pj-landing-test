@@ -117,6 +117,11 @@
 
   --web-header-surface: rgba(252,252,252,0.20);
 
+  /* Slider-gradient style (Figma "Slider-gradient/Light") — brand gradient for
+     slider fill and big display numbers (IP count, stats). Text = .9, fill = .7 */
+  --gradient-brand-text: linear-gradient(90deg, rgba(146,174,255,0.9) 0%, rgba(128,149,255,0.9) 50%, rgba(116,124,251,0.9) 100%);
+  --gradient-brand-fill: linear-gradient(90deg, rgba(146,174,255,0.7) 0%, rgba(128,149,255,0.7) 50%, rgba(116,124,251,0.7) 100%);
+
   /* Typography — font families */
   --font-sans:         "SF Pro Text", -apple-system, sans-serif;
   --font-sans-display: "SF Pro Display", -apple-system, sans-serif;
@@ -159,6 +164,11 @@
   --text-label-line:   13px;
   --text-label-tracking: -0.15px;
 
+  /* Display title — larger section headings (ahiw-title, cd-title) */
+  --text-display-size:     40px;
+  --text-display-line:     1.1;
+  --text-display-tracking: -0.8px;
+
   /* Mobile H1 override (used in @media ≤960px section titles) */
   --text-h1-m-size:     28px;
   --text-h1-m-line:     34px;
@@ -175,6 +185,7 @@
   --space-600: 24px;
   --space-800: 32px;
   --space-1200: 48px;
+  --space-1600: 64px;
 
   /* Section grid — one template for every page.
      Side gutter collapses to 16px on narrow screens by itself. */
