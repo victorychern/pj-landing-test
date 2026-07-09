@@ -92,15 +92,11 @@
   font-family: var(--font-sans);
   font-size: var(--text-h4-size);
   font-weight: 400;
-  color: var(--action-primary);
   letter-spacing: var(--text-h4-tracking);
   line-height: var(--text-h4-line);
-  text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
 }
-
-.cu-card-link:hover { text-decoration: underline; }
 
 .cu-card .btn-primary { flex-shrink: 0; }
 
@@ -177,8 +173,6 @@
   line-height: var(--text-body-s-line);
   text-align: center;
 }
-.cf-legal-link { color: var(--action-primary); text-decoration: none; }
-.cf-legal-link:hover { text-decoration: underline; }
 
 /* ── Company details section ── */
 .cd-section {
@@ -242,6 +236,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-600);
+  padding-top: var(--space-300);
   width: 100%;
 }
 .cd-field {
@@ -278,7 +273,8 @@ a.cd-field-value:hover { color: var(--action-primary); }
   line-height: var(--text-h4-line);
 }
 
-/* Social row — fixed 52px circles, row spreads them edge to edge */
+/* Social row — fixed circles, row spreads them edge to edge.
+   Size L (64px) on desktop, size M (52px) on mobile — see media query below. */
 .cd-socials {
   display: flex;
   justify-content: space-between;
@@ -287,8 +283,8 @@ a.cd-field-value:hover { color: var(--action-primary); }
 }
 .cd-social-btn {
   flex: none;
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,4 +319,6 @@ a.cd-field-value:hover { color: var(--action-primary); }
     gap: var(--space-1600);
   }
   .cd-fields { padding-top: var(--space-200); }
+  /* Social button size M on mobile (L/64px is desktop default above) */
+  .cd-social-btn { width: 52px; height: 52px; }
 }

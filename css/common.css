@@ -237,6 +237,17 @@ align-items: center;
 }
 
 
+/* ── In-text link (Figma "InTextLink") — accent color, underline on hover only,
+   positioned from font metrics instead of the browser default ── */
+.link-accent {
+  color: var(--action-primary);
+  text-decoration: none;
+  text-underline-position: from-font;
+  text-underline-offset: 2px;
+}
+.link-accent:hover { text-decoration: underline; }
+
+
 /* ── Section label (badge) — shared across all pages ── */
 .section-label {
   background: var(--bg-surface-1);
@@ -690,7 +701,7 @@ footer { width: 100%; background: var(--color-neutral-5); padding: 60px var(--sp
 .ft-group { display: flex; flex-direction: column; gap: var(--space-400); }
 .ft-heading { font-family: var(--font-sans); font-size: var(--text-body-s-size); font-weight: 500; color: var(--text-inverse-secondary); letter-spacing: var(--text-body-s-tracking); line-height: var(--text-body-s-line); }
 .ft-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-300); }
-.ft-list a { font-family: var(--font-sans); font-size: var(--text-body-s-size); font-weight: 400; color: var(--text-inverse-primary); letter-spacing: var(--text-body-s-tracking); line-height: var(--text-body-s-line); text-decoration: none; display: flex; align-items: center; height: 24px; }
+.ft-list a { font-family: var(--font-sans); font-size: var(--text-body-s-size); font-weight: 400; color: var(--text-inverse-primary); letter-spacing: var(--text-body-s-tracking); line-height: var(--text-body-s-line); text-decoration: none; display: inline-flex; align-items: center; height: 24px; }
 .ft-list a:hover { color: var(--text-inverse-secondary); }
 .ft-bottom { display: flex; align-items: center; gap: var(--space-600); }
 .ft-logo { display: flex; align-items: center; margin-right: auto; }
