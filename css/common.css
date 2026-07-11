@@ -126,53 +126,61 @@
   --font-sans:         "SF Pro Text", -apple-system, sans-serif;
   --font-sans-display: "SF Pro Display", -apple-system, sans-serif;
 
+  /* Letter-spacing primitives (Figma tracking variables) */
+  --tracking-015: -0.15px;
+  --tracking-040: -0.4px;
+  --tracking-060: -0.6px;
+  --tracking-070: -0.7px;
+  --tracking-080: -0.8px;
+  --tracking-100: -1px;
+
   /* Typography — scales */
   --text-h1-size:      36px;
   --text-h1-line:      42px;
-  --text-h1-tracking:  -1px;
+  --text-h1-tracking:  var(--tracking-070);
   --text-h1-weight:    400; /* Regular; also Medium 500, Semi-bold 600 available */
 
   --text-h2-size:      24px;
   --text-h2-line:      28px;
-  --text-h2-tracking:  -1px;
+  --text-h2-tracking:  var(--tracking-100);
 
   --text-h3-size:      20px;
   --text-h3-line:      24px;
-  --text-h3-tracking:  -0.4px;
+  --text-h3-tracking:  var(--tracking-040);
 
   --text-h4-size:      17px;
   --text-h4-line:      24px;
-  --text-h4-tracking:  -0.4px;
+  --text-h4-tracking:  var(--tracking-040);
 
   --text-body-m-size:  15px;
   --text-body-m-line:  19px;
-  --text-body-m-tracking: -0.15px;
+  --text-body-m-tracking: var(--tracking-015);
 
   --text-body-s-size:  14px;
   --text-body-s-line:  17px;
-  --text-body-s-tracking: -0.15px;
+  --text-body-s-tracking: var(--tracking-015);
 
   --text-small-size:   13px;
   --text-small-line:   16px;
-  --text-small-tracking: -0.15px;
+  --text-small-tracking: var(--tracking-015);
 
   --text-caption-size: 12px;
   --text-caption-line: 14px;
-  --text-caption-tracking: -0.15px;
+  --text-caption-tracking: var(--tracking-015);
 
   --text-label-size:   11px;
   --text-label-line:   13px;
-  --text-label-tracking: -0.15px;
+  --text-label-tracking: var(--tracking-015);
 
   /* Display title — larger section headings (ahiw-title, cd-title) */
   --text-display-size:     40px;
   --text-display-line:     1.1;
-  --text-display-tracking: -0.8px;
+  --text-display-tracking: var(--tracking-080);
 
   /* Mobile H1 override (used in @media ≤960px section titles) */
   --text-h1-m-size:     28px;
   --text-h1-m-line:     34px;
-  --text-h1-m-tracking: -0.6px;
+  --text-h1-m-tracking: var(--tracking-060);
 
   /* Spacing */
   --space-050:  2px;

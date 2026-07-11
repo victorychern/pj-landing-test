@@ -1307,64 +1307,69 @@ line-height: 36px;
   margin: 0 auto;
 }
 
-/* ── Referral Program section ── */
-.rp-desktop { display: flex; flex-direction: column; gap: var(--space-800); align-items: center; width: 100%; }
-.rp-mobile  { display: none; }
+/* ── Referral Program section — zigzag step cards ── */
+.rp2-rows { display: flex; flex-direction: column; gap: var(--space-800); width: 100%; max-width: 1164px; }
+.rp2-row { display: flex; align-items: center; gap: var(--space-600); width: 100%; }
 
-.rp-steps-d { display: flex; gap: var(--space-600); width: 100%; max-width: 926px; }
-.rp-card-d {
-  flex: 1; min-width: 0;
-  position: relative; overflow: hidden;
-  background: var(--bg-surface-1);
-  border-radius: var(--radius-500);
-  padding: var(--space-600);
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.rp2-text {
+  flex: 1 1 0; min-width: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--space-600);
+  padding: 0 var(--space-1600);
+  text-align: center;
 }
-.rp-card-img-d { position: absolute; top: var(--space-600); right: var(--space-600); width: 112px; height: 112px; display: block; }
-
-.rp-steps-m { display: flex; flex-direction: column; gap: var(--space-600); width: 100%; max-width: 442px; margin: 0 auto; }
-.rp-card-m {
-  position: relative; overflow: hidden;
+.rp2-icon {
+  flex-shrink: 0;
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
   background: var(--bg-surface-1);
+  border-radius: var(--radius-400);
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: var(--text-h2-size);
+  color: var(--text-primary);
+  letter-spacing: var(--text-h2-tracking);
+  line-height: var(--text-h2-line);
+}
+.rp2-desc {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: var(--text-h3-size);
+  color: var(--text-secondary);
+  letter-spacing: var(--text-h3-tracking);
+  line-height: var(--text-h3-line);
+}
+.rp2-desc strong { color: var(--text-primary); font-weight: 500; }
+
+.rp2-img {
+  flex: 1 1 0; min-width: 0;
+  aspect-ratio: 568 / 600;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 72px;
   border-radius: var(--radius-600);
-  padding: var(--space-500);
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-sizing: border-box;
 }
-.rp-card-img-m { position: absolute; top: var(--space-500); right: var(--space-500); width: 112px; height: 112px; display: block; }
-
-.rp-step-badge {
-  display: inline-flex; align-items: center; justify-content: center; align-self: flex-start;
-  height: 40px; padding: 10px var(--space-400);
-  background: var(--bg-app); border-radius: var(--radius-300);
-  font-family: var(--font-sans); font-size: var(--text-h4-size); font-weight: 500;
-  color: var(--status-brand-surface);
-  letter-spacing: var(--text-h4-tracking); line-height: var(--text-h4-line);
-  white-space: nowrap; flex-shrink: 0;
-}
-.rp-card-text { display: flex; flex-direction: column; gap: var(--space-200); }
-.rp-card-title {
-  font-family: var(--font-sans); font-size: var(--text-h3-size); font-weight: 500;
-  color: var(--text-primary); letter-spacing: var(--text-h3-tracking); line-height: var(--text-h3-line);
-}
-.rp-card-body {
-  font-family: var(--font-sans); font-size: var(--text-h4-size); font-weight: 400;
-  color: var(--text-secondary); letter-spacing: var(--text-h4-tracking); line-height: var(--text-h4-line);
-}
+.rp2-shot { width: 100%; height: 100%; object-fit: contain; display: block; }
 
 .rp-btns-d { display: flex; gap: var(--space-300); align-items: center; }
-.rp-btns-m { display: flex; flex-direction: column; gap: var(--space-300); width: 100%; max-width: 442px; margin: 0 auto; }
-.rp-btns-m .btn-primary, .rp-btns-m .btn-secondary { width: 100%; }
 
 @media (max-width: 960px) {
-  .rp-desktop { display: none; }
-  .rp-mobile  { display: flex; flex-direction: column; gap: var(--space-800); align-items: center; width: 100%; }
+  .rp2-rows { max-width: 442px; margin: 0 auto; }
+  .rp2-row { flex-direction: column; gap: var(--space-600); }
+  .rp2-text { flex: none; order: 1; padding: 0 var(--space-400); }
+  .rp2-icon { width: 48px; height: 48px; }
+  .rp2-img {
+    order: 2;
+    flex: none;
+    width: 100%;
+    aspect-ratio: unset;
+    padding: var(--space-500);
+    border-radius: var(--radius-500);
+  }
+  .rp2-shot { height: auto; }
+  .rp-btns-d { flex-direction: column; width: 100%; max-width: 442px; margin: 0 auto; }
+  .rp-btns-d .btn-primary, .rp-btns-d .btn-secondary-on-accent { width: 100%; }
 }
 
 /* ── For Developers section ── */
