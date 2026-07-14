@@ -534,7 +534,9 @@ letter-spacing: var(--text-body-m-tracking);
 line-height: var(--text-body-m-line);
 white-space: nowrap;
 text-decoration: none;
+transition: color 0.12s;
 }
+.site-header-login:hover { color: var(--action-primary); }
 
 
 /* ── Mobile Header ── */
