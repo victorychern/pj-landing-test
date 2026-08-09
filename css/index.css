@@ -1278,12 +1278,11 @@ line-height: 36px;
 .dash-win-shot {
   width: 100%;
   height: auto;
-  aspect-ratio: 2706 / 1617;
+  aspect-ratio: 4096 / 2446;
   object-fit: cover;
   border-radius: var(--radius-500);
   display: block;
 }
-.dash-win-shot--wide { aspect-ratio: 1144 / 685; }
 
 /* Tab row — replaces the stack on mobile, drives the same windows */
 .dash-tabs {
