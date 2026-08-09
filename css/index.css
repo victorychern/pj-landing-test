@@ -1185,6 +1185,186 @@ line-height: 36px;
 }
 }
 
+/* ── Dashboard overview — stacked screenshots ──
+   The stack is authored at its native 924×664 size and scaled as a whole via
+   container query units, so every window keeps its exact relative position. */
+.dash-stack {
+  position: relative;
+  width: 100%;
+  max-width: 924px;
+  aspect-ratio: 924 / 664;
+  container-type: inline-size;
+}
+.dash-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 924px;
+  height: 664px;
+  transform-origin: top left;
+  transform: scale(calc(100cqw / 924px));
+}
+
+.dash-win {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--color-neutral-100);
+  border-radius: var(--radius-600);
+  padding: 0 var(--space-200) var(--space-200);
+  box-sizing: border-box;
+  /* top/width animate when the stack is reshuffled (js/dash-stack.js) */
+  transition: transform 0.2s ease, filter 0.2s ease, top 0.35s ease, width 0.35s ease;
+}
+/* Stack positions — z-index keeps the order independent of DOM order,
+   so reshuffling is a matter of swapping these classes */
+.dash-win--back  { top: 0;    width: 780px; z-index: 1; }
+.dash-win--mid   { top: 32px; width: 841px; z-index: 2; filter: drop-shadow(0 -8px 10px rgba(0,0,0,0.04)); }
+.dash-win--front { top: 68px; width: 924px; z-index: 3; filter: drop-shadow(0 -8px 10px rgba(0,0,0,0.04)); }
+
+/* Hover / keyboard focus — a window tucked behind the main one lifts out of the
+   stack at full opacity. Only that window moves. Activating it brings it to the
+   front (js/dash-stack.js). */
+.dash-win--back,
+.dash-win--mid { cursor: pointer; }
+.dash-win--back:hover,
+.dash-win--mid:hover,
+.dash-win--back:has(.dash-win-bar:focus-visible),
+.dash-win--mid:has(.dash-win-bar:focus-visible) {
+  transform: translateX(-50%) translateY(-10px);
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.10));
+}
+
+/* Title bar — a button, so the stack works from the keyboard; fades out on the
+   windows further back in the stack */
+.dash-win-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+  padding: var(--space-300);
+  width: 100%;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-400);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.dash-win--front .dash-win-bar { cursor: default; }
+.dash-win-bar:focus-visible {
+  outline: 2px solid var(--border-accent);
+  outline-offset: 2px;
+}
+.dash-win--back .dash-win-bar { opacity: 0.6; }
+.dash-win--mid  .dash-win-bar { opacity: 0.8; }
+.dash-win--back:hover .dash-win-bar,
+.dash-win--mid:hover  .dash-win-bar,
+.dash-win-bar:focus-visible { opacity: 1; }
+.dash-win-logo { width: 20px; height: 20px; display: block; flex-shrink: 0; }
+.dash-win-name {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-m-size);
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: var(--text-body-m-tracking);
+  line-height: var(--text-body-m-line);
+  white-space: nowrap;
+}
+.dash-win picture { display: block; width: 100%; }
+.dash-win-shot {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2706 / 1617;
+  object-fit: cover;
+  border-radius: var(--radius-500);
+  display: block;
+}
+.dash-win-shot--wide { aspect-ratio: 1144 / 685; }
+
+/* Tab row — replaces the stack on mobile, drives the same windows */
+.dash-tabs {
+  display: none;
+  gap: var(--space-200);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.dash-tab {
+  height: 36px;
+  padding: 0 var(--space-300);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-300);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-s-size);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-body-s-tracking);
+  line-height: var(--text-body-s-line);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.dash-tab[aria-selected="true"] {
+  background: rgba(0,0,0,0.05);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.dash-tab:focus-visible {
+  outline: 2px solid var(--border-accent);
+  outline-offset: 2px;
+}
+
+/* Wrapper is inert on desktop; on mobile it pairs the tabs with the screenshot */
+.dash-body { display: contents; }
+
+/* Mobile — no stacking: tabs on top, only the selected window shown */
+@media (max-width: 960px) {
+  .dash-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-300);
+    width: 100%;
+  }
+  .dash-tabs { display: flex; }
+  .dash-stack {
+    aspect-ratio: auto;
+    height: auto;
+    container-type: normal;
+  }
+  .dash-canvas {
+    position: static;
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+  .dash-win {
+    position: static;
+    transform: none;
+    width: 100%;
+    filter: none;
+    cursor: default;
+    /* no title bar here, so the frame needs its own padding on top */
+    padding-top: var(--space-200);
+  }
+  .dash-win:not(.dash-win--front) { display: none; }
+  .dash-win-bar { display: none; }
+  .dash-win-shot { border-radius: var(--radius-400); }
+}
+
+/* Respect a reduced-motion preference — the stack still reshuffles, just instantly */
+@media (prefers-reduced-motion: reduce) {
+  .dash-win, .dash-win-bar, .dash-tab { transition: none; }
+  .dash-win--back:hover,
+  .dash-win--mid:hover,
+  .dash-win--back:has(.dash-win-bar:focus-visible),
+  .dash-win--mid:has(.dash-win-bar:focus-visible) { transform: translateX(-50%); }
+}
+
 /* ── Proxy Workflows section ── */
 .pw-locations {
   display: flex;

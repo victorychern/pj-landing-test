@@ -756,6 +756,7 @@ transition: background 0.12s;
    .sel-wrap[data-sel]        custom select with dropdown (js/fields.js)
    .sel-wrap--empty           select without value: label acts as placeholder
    .sel-wrap--text            plain text input / textarea (no JS)
+   .sel-wrap--error           invalid field: error colours + visible .sel-hint
    .sel-input--area           textarea shell (160px)
 ══════════════════════════════════ */
 
@@ -782,7 +783,7 @@ user-select: none;
 transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
 box-sizing: border-box;
 }
-.sel-input:hover:not(.sel-input--open):not(:focus-within) { background: var(--bg-subtle-hover); }
+.sel-wrap:not(.sel-wrap--error) .sel-input:hover:not(.sel-input--open):not(:focus-within) { background: var(--bg-subtle-hover); }
 /* Focus — accent border plus a soft 3px halo around the field */
 .sel-input--open,
 .sel-input:focus-within {
@@ -791,12 +792,26 @@ border-color: var(--border-accent);
 box-shadow: 0 0 0 3px var(--status-brand-bg);
 }
 /* Error — same shape, error colours; applies empty, filled and focused alike */
-.sel-input--error,
-.sel-input--error:focus-within {
+.sel-wrap--error .sel-input,
+.sel-wrap--error .sel-input:focus-within {
 background: var(--bg-surface-1);
 border-color: var(--status-error-surface);
 box-shadow: 0 0 0 3px var(--status-error-bg);
 }
+
+/* Hint under the field — only rendered while the field is in error */
+.sel-hint {
+display: none;
+padding: 0 var(--space-100);
+margin-top: var(--space-100);
+font-family: var(--font-sans);
+font-size: var(--text-caption-size);
+font-weight: 400;
+color: var(--status-error-surface);
+letter-spacing: var(--text-caption-tracking);
+line-height: var(--text-caption-line);
+}
+.sel-wrap--error .sel-hint { display: block; }
 .sel-flag {
 width: 28px;
 height: 28px;

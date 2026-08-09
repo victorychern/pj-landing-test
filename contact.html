@@ -87,7 +87,7 @@
     <h2 class="cu-title">Send us a message</h2>
   </div>
 
-  <div class="cf-card">
+  <form class="cf-card" id="cf-form" novalidate>
     <div class="cf-fields">
 
       <!-- Text field -->
@@ -95,22 +95,24 @@
         <span class="sel-input">
           <span class="sel-text">
             <span class="sel-label">Your name</span>
-            <input class="sel-field" type="text" placeholder="Your name" autocomplete="name">
+            <input class="sel-field" type="text" name="name" placeholder="Your name" autocomplete="name" required>
           </span>
         </span>
+        <span class="sel-hint" data-hint="Please enter your name"></span>
       </label>
 
       <label class="sel-wrap sel-wrap--text">
         <span class="sel-input">
           <span class="sel-text">
             <span class="sel-label">Email address</span>
-            <input class="sel-field" type="email" placeholder="Email address" autocomplete="email">
+            <input class="sel-field" type="email" name="email" placeholder="Email address" autocomplete="email" required>
           </span>
         </span>
+        <span class="sel-hint" data-hint="Please enter a valid email address"></span>
       </label>
 
       <!-- Select (custom dropdown, js/fields.js) -->
-      <div class="sel-wrap sel-wrap--empty" data-sel="cf-topic">
+      <div class="sel-wrap sel-wrap--empty" data-sel="cf-topic" data-required>
         <div class="sel-input">
           <div class="sel-text">
             <span class="sel-label">Topic</span>
@@ -124,6 +126,7 @@
           <div class="sel-drop-item sel-drop-item--sm"><span class="sel-drop-name">Abuse report</span></div>
           <div class="sel-drop-item sel-drop-item--sm"><span class="sel-drop-name">Other</span></div>
         </div>
+        <span class="sel-hint" data-hint="Please choose a topic"></span>
       </div>
 
       <!-- Textarea -->
@@ -131,15 +134,16 @@
         <span class="sel-input sel-input--area">
           <span class="sel-text">
             <span class="sel-label">How can we help you?</span>
-            <textarea class="sel-field" placeholder="How can we help you?"></textarea>
+            <textarea class="sel-field" name="message" placeholder="How can we help you?" required></textarea>
           </span>
         </span>
+        <span class="sel-hint" data-hint="Please tell us how we can help"></span>
       </label>
 
     </div>
-    <button class="btn-primary btn-xl cf-submit">Send message</button>
+    <button type="submit" class="btn-primary btn-xl cf-submit">Send message</button>
     <p class="cf-legal">By clicking, you agree to our <a href="#" class="link-accent">Terms &amp; Conditions</a>,<br><a href="#" class="link-accent">Privacy Policy</a></p>
-  </div>
+  </form>
 
 </section>
 
@@ -274,5 +278,6 @@
 <script src="js/includes.js"></script>
 <script src="js/fields.js"></script>
 <script src="js/faq.js"></script>
+<script src="js/form-validate.js"></script>
 </body>
 </html>
