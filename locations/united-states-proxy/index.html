@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>United States Proxies — Residential, Mobile &amp; Datacenter IPs | ProxyJam</title>
 <meta name="description" content="Real US IP addresses from 30+ cities and all 50 states. 18M+ residential, 200k mobile 4G, 40k ISP static — all with city-level targeting and sticky sessions.">
-<!-- Page lives in a subfolder; base keeps shared assets and partials resolving from the site root -->
-<base href="/">
+<!-- Page lives in a subfolder; base points at the site root so shared assets and
+     partials resolve. Relative, not "/", so the site also works when it's served
+     from a subfolder (e.g. GitHub Pages project sites) -->
+<base href="../../">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap">
@@ -47,7 +49,7 @@
   </div>
   <!-- The canvas can't be read by assistive tech, so the same destinations live here -->
   <nav class="loc-globe-links visually-hidden" aria-label="Proxy locations">
-    <a href="/locations/united-states-proxy/">United States proxies</a>
+    <a href="locations/united-states-proxy/">United States proxies</a>
   </nav>
 
   <div class="loc-stats">

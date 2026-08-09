@@ -2,7 +2,7 @@ history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 
 const _favicon = document.createElement('link');
-_favicon.rel = 'icon'; _favicon.type = 'image/png'; _favicon.href = '/favicon.png';
+_favicon.rel = 'icon'; _favicon.type = 'image/png'; _favicon.href = 'favicon.png';
 document.head.appendChild(_favicon);
 
 (async () => {

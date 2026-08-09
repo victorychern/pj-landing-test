@@ -51,7 +51,8 @@
   }
   function pageFor(mapName) {
     var c = available[mapName];
-    return c ? '/locations/' + c.slug + '-proxy/' : null;
+    // Relative so the site works from a subfolder; resolves against <base>
+    return c ? 'locations/' + c.slug + '-proxy/' : null;
   }
 
   // Canvas is sized in CSS pixels but backed at device resolution for sharpness
