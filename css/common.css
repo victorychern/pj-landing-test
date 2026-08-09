@@ -779,14 +779,23 @@ border: 1.5px solid transparent;
 cursor: pointer;
 user-select: none;
 -webkit-user-select: none;
-transition: background 0.12s, border-color 0.12s;
+transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
 box-sizing: border-box;
 }
 .sel-input:hover:not(.sel-input--open):not(:focus-within) { background: var(--bg-subtle-hover); }
+/* Focus — accent border plus a soft 3px halo around the field */
 .sel-input--open,
 .sel-input:focus-within {
 background: var(--bg-surface-1);
 border-color: var(--border-accent);
+box-shadow: 0 0 0 3px var(--status-brand-bg);
+}
+/* Error — same shape, error colours; applies empty, filled and focused alike */
+.sel-input--error,
+.sel-input--error:focus-within {
+background: var(--bg-surface-1);
+border-color: var(--status-error-surface);
+box-shadow: 0 0 0 3px var(--status-error-bg);
 }
 .sel-flag {
 width: 28px;
