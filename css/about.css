@@ -85,7 +85,7 @@
   align-items: center;
   gap: var(--space-150);
   padding: var(--space-200) var(--space-300) var(--space-200) var(--space-200);
-  background: var(--text-primary);
+  background: var(--bg-inverse);
   border-radius: var(--radius-300);
   box-shadow: 0 4px 6px rgba(26,29,81,0.06);
   z-index: 3;
@@ -425,52 +425,7 @@
   line-height: var(--text-h1-line);
   text-align: center;
 }
-.an-stats {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 924px;
-}
-.an-stat {
-  flex: 1 0 0;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-200);
-  align-items: center;
-}
-.an-num {
-  font-family: var(--font-sans-display);
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: var(--text-h1-tracking);
-  background: var(--gradient-brand-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.an-label {
-  font-family: var(--font-sans);
-  font-size: var(--text-h4-size);
-  font-weight: 400;
-  color: var(--text-secondary);
-  letter-spacing: var(--text-h4-tracking);
-  line-height: var(--text-h4-line);
-}
-.an-divider {
-  width: 1px;
-  height: 39px;
-  background: var(--color-indigo-75);
-  opacity: 0.2;
-  flex-shrink: 0;
-}
-
-@media (max-width: 960px) {
-  .an-stats { flex-direction: column; align-items: stretch; gap: 44px; }
-  .an-stat { flex: none; width: 100%; }
-  .an-divider { display: none; }
-}
+/* Stats row (.stats-*) is a shared component — see common.css */
 
 /* ══════════════════════════════════════
    HOW IT WORKS SECTION

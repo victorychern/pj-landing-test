@@ -1,0 +1,817 @@
+{
+"Afghanistan": {
+"code": "AF",
+"name": "Afghanistan",
+"slug": "afghanistan"
+},
+"Albania": {
+"code": "AL",
+"name": "Albania",
+"slug": "albania"
+},
+"Algeria": {
+"code": "DZ",
+"name": "Algeria",
+"slug": "algeria"
+},
+"Angola": {
+"code": "AO",
+"name": "Angola",
+"slug": "angola"
+},
+"Argentina": {
+"code": "AR",
+"name": "Argentina",
+"slug": "argentina"
+},
+"Armenia": {
+"code": "AM",
+"name": "Armenia",
+"slug": "armenia"
+},
+"Australia": {
+"code": "AU",
+"name": "Australia",
+"slug": "australia"
+},
+"Austria": {
+"code": "AT",
+"name": "Austria",
+"slug": "austria"
+},
+"Azerbaijan": {
+"code": "AZ",
+"name": "Azerbaijan",
+"slug": "azerbaijan"
+},
+"Bahamas": {
+"code": "BS",
+"name": "Bahamas",
+"slug": "bahamas"
+},
+"Bangladesh": {
+"code": "BD",
+"name": "Bangladesh",
+"slug": "bangladesh"
+},
+"Belarus": {
+"code": "BY",
+"name": "Belarus",
+"slug": "belarus"
+},
+"Belgium": {
+"code": "BE",
+"name": "Belgium",
+"slug": "belgium"
+},
+"Belize": {
+"code": "BZ",
+"name": "Belize",
+"slug": "belize"
+},
+"Benin": {
+"code": "BJ",
+"name": "Benin",
+"slug": "benin"
+},
+"Bhutan": {
+"code": "BT",
+"name": "Bhutan",
+"slug": "bhutan"
+},
+"Bolivia": {
+"code": "BO",
+"name": "Bolivia",
+"slug": "bolivia"
+},
+"Bosnia and Herz.": {
+"code": "BA",
+"name": "Bosnia and Herzegovina",
+"slug": "bosnia-and-herzegovina"
+},
+"Botswana": {
+"code": "BW",
+"name": "Botswana",
+"slug": "botswana"
+},
+"Brazil": {
+"code": "BR",
+"name": "Brazil",
+"slug": "brazil"
+},
+"Brunei": {
+"code": "BN",
+"name": "Brunei",
+"slug": "brunei"
+},
+"Bulgaria": {
+"code": "BG",
+"name": "Bulgaria",
+"slug": "bulgaria"
+},
+"Burkina Faso": {
+"code": "BF",
+"name": "Burkina Faso",
+"slug": "burkina-faso"
+},
+"Burundi": {
+"code": "BI",
+"name": "Burundi",
+"slug": "burundi"
+},
+"Cambodia": {
+"code": "KH",
+"name": "Cambodia",
+"slug": "cambodia"
+},
+"Cameroon": {
+"code": "CM",
+"name": "Cameroon",
+"slug": "cameroon"
+},
+"Canada": {
+"code": "CA",
+"name": "Canada",
+"slug": "canada"
+},
+"Central African Rep.": {
+"code": "CF",
+"name": "Central African Republic",
+"slug": "central-african-republic"
+},
+"Chad": {
+"code": "TD",
+"name": "Chad",
+"slug": "chad"
+},
+"Chile": {
+"code": "CL",
+"name": "Chile",
+"slug": "chile"
+},
+"China": {
+"code": "CN",
+"name": "China",
+"slug": "china"
+},
+"Colombia": {
+"code": "CO",
+"name": "Colombia",
+"slug": "colombia"
+},
+"Congo": {
+"code": "CG",
+"name": "Democratic Republic of the Congo",
+"slug": "democratic-republic-of-the-congo"
+},
+"Costa Rica": {
+"code": "CR",
+"name": "Costa Rica",
+"slug": "costa-rica"
+},
+"Croatia": {
+"code": "HR",
+"name": "Croatia",
+"slug": "croatia"
+},
+"Cuba": {
+"code": "CU",
+"name": "Cuba",
+"slug": "cuba"
+},
+"Cyprus": {
+"code": "CY",
+"name": "Cyprus",
+"slug": "cyprus"
+},
+"Czechia": {
+"code": "CZ",
+"name": "Czech Republic",
+"slug": "czech-republic"
+},
+"Côte d'Ivoire": {
+"code": "CI",
+"name": "Côte d’Ivoire",
+"slug": "cote-divoire"
+},
+"Denmark": {
+"code": "DK",
+"name": "Denmark",
+"slug": "denmark"
+},
+"Djibouti": {
+"code": "DJ",
+"name": "Djibouti",
+"slug": "djibouti"
+},
+"Dominican Rep.": {
+"code": "DO",
+"name": "Dominican Republic",
+"slug": "dominican-republic"
+},
+"Ecuador": {
+"code": "EC",
+"name": "Ecuador",
+"slug": "ecuador"
+},
+"Egypt": {
+"code": "EG",
+"name": "Egypt",
+"slug": "egypt"
+},
+"El Salvador": {
+"code": "SV",
+"name": "El Salvador",
+"slug": "el-salvador"
+},
+"Eq. Guinea": {
+"code": "GQ",
+"name": "Equatorial Guinea",
+"slug": "equatorial-guinea"
+},
+"Eritrea": {
+"code": "ER",
+"name": "Eritrea",
+"slug": "eritrea"
+},
+"Estonia": {
+"code": "EE",
+"name": "Estonia",
+"slug": "estonia"
+},
+"Ethiopia": {
+"code": "ET",
+"name": "Ethiopia",
+"slug": "ethiopia"
+},
+"Fiji": {
+"code": "FJ",
+"name": "Fiji",
+"slug": "fiji"
+},
+"Finland": {
+"code": "FI",
+"name": "Finland",
+"slug": "finland"
+},
+"France": {
+"code": "FR",
+"name": "France",
+"slug": "france"
+},
+"Gabon": {
+"code": "GA",
+"name": "Gabon",
+"slug": "gabon"
+},
+"Gambia": {
+"code": "GM",
+"name": "Gambia",
+"slug": "gambia"
+},
+"Georgia": {
+"code": "GE",
+"name": "Georgia",
+"slug": "georgia"
+},
+"Germany": {
+"code": "DE",
+"name": "Germany",
+"slug": "germany"
+},
+"Ghana": {
+"code": "GH",
+"name": "Ghana",
+"slug": "ghana"
+},
+"Greece": {
+"code": "GR",
+"name": "Greece",
+"slug": "greece"
+},
+"Guatemala": {
+"code": "GT",
+"name": "Guatemala",
+"slug": "guatemala"
+},
+"Guinea": {
+"code": "GN",
+"name": "Guinea",
+"slug": "guinea"
+},
+"Guinea-Bissau": {
+"code": "GW",
+"name": "Guinea-Bissau",
+"slug": "guinea-bissau"
+},
+"Guyana": {
+"code": "GY",
+"name": "Guyana",
+"slug": "guyana"
+},
+"Haiti": {
+"code": "HT",
+"name": "Haiti",
+"slug": "haiti"
+},
+"Honduras": {
+"code": "HN",
+"name": "Honduras",
+"slug": "honduras"
+},
+"Hungary": {
+"code": "HU",
+"name": "Hungary",
+"slug": "hungary"
+},
+"India": {
+"code": "IN",
+"name": "India",
+"slug": "india"
+},
+"Indonesia": {
+"code": "ID",
+"name": "Indonesia",
+"slug": "indonesia"
+},
+"Iran": {
+"code": "IR",
+"name": "Iran",
+"slug": "iran"
+},
+"Iraq": {
+"code": "IQ",
+"name": "Iraq",
+"slug": "iraq"
+},
+"Ireland": {
+"code": "IE",
+"name": "Ireland",
+"slug": "ireland"
+},
+"Israel": {
+"code": "IL",
+"name": "Israel",
+"slug": "israel"
+},
+"Italy": {
+"code": "IT",
+"name": "Italy",
+"slug": "italy"
+},
+"Jamaica": {
+"code": "JM",
+"name": "Jamaica",
+"slug": "jamaica"
+},
+"Japan": {
+"code": "JP",
+"name": "Japan",
+"slug": "japan"
+},
+"Jordan": {
+"code": "JO",
+"name": "Jordan",
+"slug": "jordan"
+},
+"Kazakhstan": {
+"code": "KZ",
+"name": "Kazakhstan",
+"slug": "kazakhstan"
+},
+"Kenya": {
+"code": "KE",
+"name": "Kenya",
+"slug": "kenya"
+},
+"Kuwait": {
+"code": "KW",
+"name": "Kuwait",
+"slug": "kuwait"
+},
+"Kyrgyzstan": {
+"code": "KG",
+"name": "Kyrgyzstan",
+"slug": "kyrgyzstan"
+},
+"Laos": {
+"code": "LA",
+"name": "Laos",
+"slug": "laos"
+},
+"Latvia": {
+"code": "LV",
+"name": "Latvia",
+"slug": "latvia"
+},
+"Lebanon": {
+"code": "LB",
+"name": "Lebanon",
+"slug": "lebanon"
+},
+"Lesotho": {
+"code": "LS",
+"name": "Lesotho",
+"slug": "lesotho"
+},
+"Liberia": {
+"code": "LR",
+"name": "Liberia",
+"slug": "liberia"
+},
+"Libya": {
+"code": "LY",
+"name": "Libya",
+"slug": "libya"
+},
+"Lithuania": {
+"code": "LT",
+"name": "Lithuania",
+"slug": "lithuania"
+},
+"Luxembourg": {
+"code": "LU",
+"name": "Luxembourg",
+"slug": "luxembourg"
+},
+"Macedonia": {
+"code": "MK",
+"name": "North Macedonia",
+"slug": "north-macedonia"
+},
+"Madagascar": {
+"code": "MG",
+"name": "Madagascar",
+"slug": "madagascar"
+},
+"Malawi": {
+"code": "MW",
+"name": "Malawi",
+"slug": "malawi"
+},
+"Malaysia": {
+"code": "MY",
+"name": "Malaysia",
+"slug": "malaysia"
+},
+"Mali": {
+"code": "ML",
+"name": "Mali",
+"slug": "mali"
+},
+"Mauritania": {
+"code": "MR",
+"name": "Mauritania",
+"slug": "mauritania"
+},
+"Mexico": {
+"code": "MX",
+"name": "Mexico",
+"slug": "mexico"
+},
+"Moldova": {
+"code": "MD",
+"name": "Moldova",
+"slug": "moldova"
+},
+"Mongolia": {
+"code": "MN",
+"name": "Mongolia",
+"slug": "mongolia"
+},
+"Montenegro": {
+"code": "ME",
+"name": "Montenegro",
+"slug": "montenegro"
+},
+"Morocco": {
+"code": "MA",
+"name": "Morocco",
+"slug": "morocco"
+},
+"Mozambique": {
+"code": "MZ",
+"name": "Mozambique",
+"slug": "mozambique"
+},
+"Myanmar": {
+"code": "MM",
+"name": "Myanmar",
+"slug": "myanmar"
+},
+"Namibia": {
+"code": "NA",
+"name": "Namibia",
+"slug": "namibia"
+},
+"Nepal": {
+"code": "NP",
+"name": "Nepal",
+"slug": "nepal"
+},
+"Netherlands": {
+"code": "NL",
+"name": "Netherlands",
+"slug": "netherlands"
+},
+"New Zealand": {
+"code": "NZ",
+"name": "New Zealand",
+"slug": "new-zealand"
+},
+"Nicaragua": {
+"code": "NI",
+"name": "Nicaragua",
+"slug": "nicaragua"
+},
+"Niger": {
+"code": "NE",
+"name": "Niger",
+"slug": "niger"
+},
+"Nigeria": {
+"code": "NG",
+"name": "Nigeria",
+"slug": "nigeria"
+},
+"Norway": {
+"code": "NO",
+"name": "Norway",
+"slug": "norway"
+},
+"Oman": {
+"code": "OM",
+"name": "Oman",
+"slug": "oman"
+},
+"Pakistan": {
+"code": "PK",
+"name": "Pakistan",
+"slug": "pakistan"
+},
+"Panama": {
+"code": "PA",
+"name": "Panama",
+"slug": "panama"
+},
+"Papua New Guinea": {
+"code": "PG",
+"name": "Papua New Guinea",
+"slug": "papua-new-guinea"
+},
+"Paraguay": {
+"code": "PY",
+"name": "Paraguay",
+"slug": "paraguay"
+},
+"Peru": {
+"code": "PE",
+"name": "Peru",
+"slug": "peru"
+},
+"Philippines": {
+"code": "PH",
+"name": "Philippines",
+"slug": "philippines"
+},
+"Poland": {
+"code": "PL",
+"name": "Poland",
+"slug": "poland"
+},
+"Portugal": {
+"code": "PT",
+"name": "Portugal",
+"slug": "portugal"
+},
+"Qatar": {
+"code": "QA",
+"name": "Qatar",
+"slug": "qatar"
+},
+"Romania": {
+"code": "RO",
+"name": "Romania",
+"slug": "romania"
+},
+"Russia": {
+"code": "RU",
+"name": "Russia",
+"slug": "russia"
+},
+"Rwanda": {
+"code": "RW",
+"name": "Rwanda",
+"slug": "rwanda"
+},
+"S. Sudan": {
+"code": "SS",
+"name": "South Sudan",
+"slug": "south-sudan"
+},
+"Saudi Arabia": {
+"code": "SA",
+"name": "Saudi Arabia",
+"slug": "saudi-arabia"
+},
+"Senegal": {
+"code": "SN",
+"name": "Senegal",
+"slug": "senegal"
+},
+"Serbia": {
+"code": "RS",
+"name": "Serbia",
+"slug": "serbia"
+},
+"Sierra Leone": {
+"code": "SL",
+"name": "Sierra Leone",
+"slug": "sierra-leone"
+},
+"Slovakia": {
+"code": "SK",
+"name": "Slovakia",
+"slug": "slovakia"
+},
+"Slovenia": {
+"code": "SI",
+"name": "Slovenia",
+"slug": "slovenia"
+},
+"Solomon Is.": {
+"code": "SB",
+"name": "Solomon Islands",
+"slug": "solomon-islands"
+},
+"Somalia": {
+"code": "SO",
+"name": "Somalia",
+"slug": "somalia"
+},
+"South Africa": {
+"code": "ZA",
+"name": "South Africa",
+"slug": "south-africa"
+},
+"South Korea": {
+"code": "KR",
+"name": "South Korea",
+"slug": "south-korea"
+},
+"Spain": {
+"code": "ES",
+"name": "Spain",
+"slug": "spain"
+},
+"Sri Lanka": {
+"code": "LK",
+"name": "Sri Lanka",
+"slug": "sri-lanka"
+},
+"Sudan": {
+"code": "SD",
+"name": "Sudan",
+"slug": "sudan"
+},
+"Suriname": {
+"code": "SR",
+"name": "Suriname",
+"slug": "suriname"
+},
+"Sweden": {
+"code": "SE",
+"name": "Sweden",
+"slug": "sweden"
+},
+"Switzerland": {
+"code": "CH",
+"name": "Switzerland",
+"slug": "switzerland"
+},
+"Syria": {
+"code": "SY",
+"name": "Syria",
+"slug": "syria"
+},
+"Taiwan": {
+"code": "TW",
+"name": "Taiwan",
+"slug": "taiwan"
+},
+"Tajikistan": {
+"code": "TJ",
+"name": "Tajikistan",
+"slug": "tajikistan"
+},
+"Tanzania": {
+"code": "TZ",
+"name": "Tanzania",
+"slug": "tanzania"
+},
+"Thailand": {
+"code": "TH",
+"name": "Thailand",
+"slug": "thailand"
+},
+"Timor-Leste": {
+"code": "TL",
+"name": "Timor-Leste",
+"slug": "timor-leste"
+},
+"Togo": {
+"code": "TG",
+"name": "Togo",
+"slug": "togo"
+},
+"Trinidad and Tobago": {
+"code": "TT",
+"name": "Trinidad and Tobago",
+"slug": "trinidad-and-tobago"
+},
+"Tunisia": {
+"code": "TN",
+"name": "Tunisia",
+"slug": "tunisia"
+},
+"Turkey": {
+"code": "TR",
+"name": "Turkey",
+"slug": "turkey"
+},
+"Turkmenistan": {
+"code": "TM",
+"name": "Turkmenistan",
+"slug": "turkmenistan"
+},
+"Uganda": {
+"code": "UG",
+"name": "Uganda",
+"slug": "uganda"
+},
+"Ukraine": {
+"code": "UA",
+"name": "Ukraine",
+"slug": "ukraine"
+},
+"United Arab Emirates": {
+"code": "AE",
+"name": "United Arab Emirates",
+"slug": "united-arab-emirates"
+},
+"United Kingdom": {
+"code": "UK",
+"name": "United Kingdom",
+"slug": "united-kingdom"
+},
+"United States of America": {
+"code": "US",
+"name": "United States",
+"slug": "united-states"
+},
+"Uruguay": {
+"code": "UY",
+"name": "Uruguay",
+"slug": "uruguay"
+},
+"Uzbekistan": {
+"code": "UZ",
+"name": "Uzbekistan",
+"slug": "uzbekistan"
+},
+"Vanuatu": {
+"code": "VU",
+"name": "Vanuatu",
+"slug": "vanuatu"
+},
+"Venezuela": {
+"code": "VE",
+"name": "Venezuela",
+"slug": "venezuela"
+},
+"Vietnam": {
+"code": "VN",
+"name": "Vietnam",
+"slug": "vietnam"
+},
+"Yemen": {
+"code": "YE",
+"name": "Yemen",
+"slug": "yemen"
+},
+"Zambia": {
+"code": "ZM",
+"name": "Zambia",
+"slug": "zambia"
+},
+"Zimbabwe": {
+"code": "ZW",
+"name": "Zimbabwe",
+"slug": "zimbabwe"
+},
+"eSwatini": {
+"code": "SZ",
+"name": "Eswatini",
+"slug": "eswatini"
+}
+}

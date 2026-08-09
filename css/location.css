@@ -1,0 +1,152 @@
+/* ── Location page (e.g. /locations/united-states-proxy/) ── */
+
+.loc-hero {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: var(--bg-app);
+  padding: var(--hero-pad-top) var(--page-gutter) var(--section-pad);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-800);
+  align-items: center;
+}
+
+/* Header block — badge, title, subtitle, then the actions */
+.loc-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-600);
+  align-items: center;
+  width: 100%;
+}
+.loc-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-400);
+  align-items: center;
+  width: 100%;
+}
+.loc-title {
+  font-family: var(--font-sans-display);
+  font-size: var(--text-h1-size);
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h1-tracking);
+  line-height: var(--text-h1-line);
+  text-align: center;
+}
+.loc-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  text-align: center;
+  max-width: 616px;
+}
+
+.loc-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-400);
+  align-items: center;
+}
+.loc-btns {
+  display: flex;
+  gap: var(--space-300);
+  align-items: flex-start;
+}
+.loc-btn-primary { width: 253px; }
+.loc-note {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption-size);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-caption-tracking);
+  line-height: var(--text-caption-line);
+  text-align: center;
+}
+
+/* Globe — canvas rendered by js/globe.js. The palette lives here so the globe
+   keeps using design tokens; the script reads these custom properties. */
+.loc-globe {
+  --globe-sphere:        var(--bg-surface-1);
+  --globe-grid:          var(--border-primary);
+  /* Three country states: this page's country, countries we sell, the rest */
+  --globe-land-current:  var(--status-brand-surface);
+  --globe-land:          #B6B9FB;
+  --globe-land-hover:    #959AFB;   /* midway between available and current */
+  --globe-land-muted:    #D2D4FB;
+  --globe-stroke:        var(--color-neutral-100);
+
+  position: relative;
+  width: 520px;
+  height: 520px;
+  flex-shrink: 0;
+  /* Fades in once the map data has parsed, so there's no half-drawn frame */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.loc-globe.is-ready { opacity: 1; }
+.loc-globe-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-full);
+  cursor: grab;
+  touch-action: pan-y; /* let the page scroll vertically over the globe */
+}
+.loc-globe.is-dragging .loc-globe-canvas { cursor: grabbing; }
+.loc-globe.is-linked  .loc-globe-canvas { cursor: pointer; }
+
+.loc-globe-flag {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--color-neutral-100);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 4px rgba(24,23,48,0.25);
+  display: block;
+  pointer-events: none;
+}
+
+/* Country label — the shared .tooltip, positioned next to the cursor */
+.loc-globe-tip {
+  position: absolute;
+  transform: translate(12px, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.loc-globe-tip.is-visible { opacity: 1; }
+
+/* Stats row (.stats-* lives in common.css) */
+.loc-stats {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-800) 0;
+}
+
+@media (max-width: 960px) {
+  .loc-title {
+    font-size: var(--text-h1-m-size);
+    line-height: var(--text-h1-m-line);
+    letter-spacing: var(--text-h1-m-tracking);
+  }
+  /* Title breaks naturally on narrow screens */
+  .loc-title br { display: none; }
+  .loc-btns { flex-direction: column; width: 100%; max-width: 442px; }
+  .loc-btns .btn-primary,
+  .loc-btns .btn-secondary-on-accent { width: 100%; justify-content: center; }
+  .loc-btn-primary { width: 100%; }
+  .loc-globe { width: 100%; max-width: 375px; height: auto; aspect-ratio: 1; }
+  /* Decorative here: the globe takes no input, so it never competes with the
+     page scroll (js/globe.js matches this breakpoint) */
+  .loc-globe-canvas { pointer-events: none; touch-action: auto; cursor: default; }
+  .loc-globe-tip { display: none; }
+  .loc-stats { padding: 0; }
+}

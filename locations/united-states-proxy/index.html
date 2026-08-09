@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>United States Proxies — Residential, Mobile &amp; Datacenter IPs | ProxyJam</title>
+<meta name="description" content="Real US IP addresses from 30+ cities and all 50 states. 18M+ residential, 200k mobile 4G, 40k ISP static — all with city-level targeting and sticky sessions.">
+<!-- Page lives in a subfolder; base keeps shared assets and partials resolving from the site root -->
+<base href="/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/location.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+
+<!-- ══════════════════════════════════
+     HERO — United States proxies
+══════════════════════════════════ -->
+<section class="loc-hero">
+
+  <div class="loc-header">
+    <div class="loc-header-text">
+      <span class="section-label">🇺🇸 UNITED STATES PROXIES</span>
+      <h1 class="loc-title">United States Proxies —<br>Residential, Mobile &amp; Datacenter IPs</h1>
+      <p class="loc-subtitle">Real US IP addresses from 30+ cities and all 50 states. 18M+ residential, 200k mobile 4G, 40k ISP static — all with city-level targeting and sticky sessions.</p>
+    </div>
+
+    <div class="loc-actions">
+      <div class="loc-btns">
+        <a href="#" class="btn-primary btn-xl loc-btn-primary">View US Pricing</a>
+        <a href="#" class="btn-secondary-on-accent btn-xl">See commission structure</a>
+      </div>
+      <p class="loc-note">99.9% uptime · 7-day refund on first purchase · Instant access</p>
+    </div>
+  </div>
+
+  <!-- Interactive globe — drag to spin, click a country to open its page (js/globe.js) -->
+  <div class="loc-globe" data-globe data-country="United States of America">
+    <canvas class="loc-globe-canvas" aria-hidden="true"></canvas>
+    <img class="loc-globe-flag" src="assets/flag-us.svg" alt="">
+    <div class="tooltip loc-globe-tip" aria-hidden="true"></div>
+  </div>
+  <!-- The canvas can't be read by assistive tech, so the same destinations live here -->
+  <nav class="loc-globe-links visually-hidden" aria-label="Proxy locations">
+    <a href="/locations/united-states-proxy/">United States proxies</a>
+  </nav>
+
+  <div class="loc-stats">
+    <div class="stats-row">
+      <div class="stats-item">
+        <span class="stats-num">18M+</span>
+        <span class="stats-label">Residential IPs</span>
+      </div>
+      <div class="stats-divider"></div>
+      <div class="stats-item">
+        <span class="stats-num">30+</span>
+        <span class="stats-label">Cities Covered</span>
+      </div>
+      <div class="stats-divider"></div>
+      <div class="stats-item">
+        <span class="stats-num">200K</span>
+        <span class="stats-label">Mobile 4G/5G IPs</span>
+      </div>
+      <div class="stats-divider"></div>
+      <div class="stats-item">
+        <span class="stats-num">40K</span>
+        <span class="stats-label">ISP Static IPs</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/includes.js"></script>
+<script src="js/vendor/d3-array.min.js"></script>
+<script src="js/vendor/d3-geo.min.js"></script>
+<script src="js/vendor/topojson-client.min.js"></script>
+<script src="js/globe.js"></script>
+</body>
+</html>
