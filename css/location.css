@@ -1064,18 +1064,29 @@
   line-height: var(--text-body-s-line);
 }
 
-/* Mobile — five cards don't fit a phone row; two columns keep the flag and
-   the figures readable (no mobile frame for this one yet) */
+/* Mobile — the card turns into a row: flag, text, arrow. The head wrapper
+   dissolves so all three sit on one line. */
 @media (max-width: 960px) {
   .cc-row {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-300);
+    flex-direction: column;
+    gap: var(--space-400);
+    /* same width rule as the other mobile card blocks on the site */
     max-width: 442px;
     margin: 0 auto;
   }
-  .cc-card { padding: var(--space-400); }
+  .cc-card {
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-300);
+    width: 100%;
+  }
   .cc-card:hover { transform: none; }
+
+  .cc-head { display: contents; }
+  .cc-flag { order: 1; }
+  .cc-text { order: 2; flex: 1 1 auto; min-width: 0; }
+  .cc-go   { order: 3; }
 }
 
 @media (prefers-reduced-motion: reduce) {

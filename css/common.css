@@ -230,6 +230,13 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* In-page links: glide instead of jumping, and stop clear of the fixed header */
+html { scroll-behavior: smooth; }
+:target { scroll-margin-top: 92px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 
 /* Overscroll canvas: light when rubber-banding at top, footer-dark at bottom.

@@ -576,12 +576,6 @@
   width: 100%;
   height: 340px;
 }
-.ahiw-btn-m {
-  width: 100%;
-  max-width: 442px;
-  justify-content: center;
-}
-
 @media (max-width: 960px) {
   /* Display (40px) steps down to H1 on mobile — headings are 36px there */
   .ahiw-title {

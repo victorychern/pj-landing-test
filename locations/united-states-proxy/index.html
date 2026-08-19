@@ -34,7 +34,9 @@
 
     <div class="loc-actions">
       <div class="loc-btns">
-        <a href="#" class="btn-primary btn-xl loc-btn-primary">View US Pricing</a>
+        <!-- <base href> makes a bare "#pricing" resolve against the site root, so the
+     in-page link has to name this page explicitly -->
+        <a href="locations/united-states-proxy/#pricing" class="btn-primary btn-xl loc-btn-primary">View US Pricing</a>
         <a href="#" class="btn-secondary-on-accent btn-xl">See commission structure</a>
       </div>
       <p class="loc-note">99.9% uptime · 7-day refund on first purchase · Instant access</p>
@@ -84,7 +86,7 @@
 <!-- ══════════════════════════════════
      AVAILABLE PROXIES — pricing
 ══════════════════════════════════ -->
-<section class="section pp-section">
+<section class="section pp-section" id="pricing">
 
   <div class="section-header">
     <span class="section-label">PROXY TYPES</span>
@@ -134,7 +136,7 @@
         <span class="pp-badge">MOST POPULAR</span>
         <div class="pp-head">
           <span class="pp-plan">30 IPs</span>
-          <p class="pp-price"><span class="pp-amount">$1.80</span><span class="pp-unit">/GB</span></p>
+          <p class="pp-price"><span class="pp-amount">$1.80</span><span class="pp-unit">/IP</span></p>
         </div>
           <ul class="pp-feats">
             <li class="pp-feat">
