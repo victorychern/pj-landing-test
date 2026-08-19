@@ -68,6 +68,9 @@
   --bg-surface-2:      #EFEFF1;
   --bg-overlay-subtle: rgba(0,0,0,0.05);  /* selected tab, subtle tint on any surface */
   --bg-scroll:         var(--color-neutral-85);  /* scrollbar thumb */
+  --bg-scroll-hover:   var(--color-neutral-80);  /* thumb, hovered/pressed */
+  --bg-scroll-inverse: var(--color-neutral-30);  /* same, on a dark surface */
+  --bg-scroll-inverse-hover: var(--color-neutral-35);
   --bg-subtle:         #F2F2F3;
   --bg-subtle-hover:   #EFEFF1;
   --bg-overlay:        rgba(34,34,38,0.47);
@@ -86,6 +89,7 @@
   --text-primary:      #18181B;
   --text-secondary:    rgba(11,11,13,0.70);
   --text-disabled:     rgba(11,11,13,0.40);
+  --text-accent:       var(--status-brand-surface);
   --text-inverse:      #FCFCFC;
   /* Inverse text on dark surfaces (footer) */
   --text-inverse-primary:   rgba(252,252,252,0.90);
@@ -129,6 +133,7 @@
   /* Typography — font families */
   --font-sans:         "SF Pro Text", -apple-system, sans-serif;
   --font-sans-display: "SF Pro Display", -apple-system, sans-serif;
+  --font-mono:         ui-monospace, "SF Mono", "Menlo", monospace;
 
   /* Letter-spacing primitives (Figma tracking variables) */
   --tracking-015: -0.15px;
@@ -330,6 +335,63 @@ align-items: center;
 .icon-tile--warning   { background: var(--status-warning-bg); }
 .icon-tile--attention { background: var(--status-attention-bg); }
 .icon-tile--error     { background: var(--status-error-bg); }
+
+/* ── Scrollbar ──
+   Drawn scrollbar for a scrolling box (js/scrollbar.js). The native one is an
+   overlay on macOS/iOS, so it can't be placed next to the content. */
+.scrollbar {
+  flex-shrink: 0;
+}
+.scrollbar[hidden] { display: none; }
+
+/* Padding follows the drawn component: 4px towards the content, 2px towards the
+   outer edge — so the thumb reads 10px thick either way. The horizontal bar is
+   that same component rotated, which rotates its padding with it. */
+.scrollbar--x {
+  width: 100%;
+  height: 16px;
+  padding: 4px 4px 2px 4px;
+}
+/* stretches to the flex row it sits in — a height of 100% would add to any
+   vertical margin and push the bar past the container */
+.scrollbar--y {
+  width: 16px;
+  align-self: stretch;
+  padding: 4px 2px 4px 4px;
+}
+
+/* `menu` size — 11px bar with a 5px thumb, for bars inside a component */
+.scrollbar--sm.scrollbar--x { height: 11px; padding: 4px 9px 2px; }
+.scrollbar--sm.scrollbar--y { width: 11px; padding: 9px 2px 9px 4px; }
+.scrollbar--sm.scrollbar--x:hover,
+.scrollbar--sm.scrollbar--x:has(.scrollbar-thumb:active) { padding: 2px 12px; }
+.scrollbar--sm.scrollbar--y:hover,
+.scrollbar--sm.scrollbar--y:has(.scrollbar-thumb:active) { padding: 12px 2px; }
+
+.scrollbar-thumb {
+  display: block;
+  background: var(--bg-scroll);
+  border-radius: var(--radius-200);
+  cursor: grab;
+  transition: background 0.12s ease;
+}
+.scrollbar--x .scrollbar-thumb { height: 100%; }
+.scrollbar--y .scrollbar-thumb { width: 100%; }
+.scrollbar-thumb:active { cursor: grabbing; }
+
+/* Hover/press: padding evens out to 2px across the bar, so the thumb grows
+   from 10 to 12, and the colour deepens */
+.scrollbar--y:hover,
+.scrollbar--y:has(.scrollbar-thumb:active) { padding: 4px 2px; }
+.scrollbar--x:hover,
+.scrollbar--x:has(.scrollbar-thumb:active) { padding: 2px 4px; }
+.scrollbar:hover .scrollbar-thumb,
+.scrollbar .scrollbar-thumb:active { background: var(--bg-scroll-hover); }
+
+/* On a dark surface the thumb flips to a light tint */
+.scrollbar--inverse .scrollbar-thumb { background: var(--bg-scroll-inverse); }
+.scrollbar--inverse:hover .scrollbar-thumb,
+.scrollbar--inverse .scrollbar-thumb:active { background: var(--bg-scroll-inverse-hover); }
 
 .section-label {
   background: var(--bg-surface-1);

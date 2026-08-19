@@ -684,7 +684,7 @@
   </div>
 
   <div class="cmp-wrap">
-    <div class="cmp-scroll" data-hscroll>
+    <div class="cmp-scroll" data-scrollbox="x">
     <div class="cmp-table" role="table" aria-label="ProxyJam compared with other US proxy providers">
 
       <div class="cmp-row" role="row">
@@ -802,8 +802,313 @@
     </div>
   </div>
 
-    <div class="cmp-bar" data-hscroll-bar aria-hidden="true"><span class="cmp-bar-thumb"></span></div>
+    <div class="scrollbar scrollbar--x" data-scrollbar aria-hidden="true"><span class="scrollbar-thumb"></span></div>
   </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     QUICK SETUP
+══════════════════════════════════ -->
+<section class="section qs-section">
+
+  <div class="qs-card">
+    <div class="qs-window">
+      <div class="qs-bar">
+        <img class="qs-dots" src="assets/qs-window-dots.svg" alt="" width="52" height="12">
+        <div class="qs-tabs-wrap">
+          <div class="qs-tabs" role="tablist" aria-label="Code language" data-scrollbox="x">
+            <button type="button" class="qs-tab" role="tab" id="qs-tab-python" aria-controls="qs-code-python" aria-selected="true" data-tab="python">Python</button>
+            <button type="button" class="qs-tab" role="tab" id="qs-tab-nodejs" aria-controls="qs-code-nodejs" aria-selected="false" data-tab="nodejs">Node.js</button>
+            <button type="button" class="qs-tab" role="tab" id="qs-tab-curl" aria-controls="qs-code-curl" aria-selected="false" data-tab="curl">cURL</button>
+            <button type="button" class="qs-tab" role="tab" id="qs-tab-java" aria-controls="qs-code-java" aria-selected="false" data-tab="java">Java</button>
+            <button type="button" class="qs-tab" role="tab" id="qs-tab-go" aria-controls="qs-code-go" aria-selected="false" data-tab="go">Go</button>
+          </div>
+          <div class="scrollbar scrollbar--x scrollbar--sm scrollbar--inverse qs-tabs-bar" data-scrollbar aria-hidden="true"><span class="scrollbar-thumb"></span></div>
+        </div>
+      </div>
+        <div class="qs-body">
+        <div class="qs-codes" data-scrollbox="y">
+<pre class="qs-code" data-tab-panel="python" role="tabpanel" aria-labelledby="qs-tab-python"><code>import requests
+
+proxy = &quot;http://user:pass@gw.proxyjam.com:7777&quot;
+
+proxies = {
+    &quot;http&quot;: proxy,
+    &quot;https&quot;: proxy,
+}
+
+headers = {
+    &quot;X-PJ-Country&quot;: &quot;US&quot;,
+}
+
+response = requests.get(
+    &quot;https://ipinfo.io/json&quot;,
+    proxies=proxies,
+    headers=headers,
+)
+
+print(response.json())</code></pre>
+        <pre class="qs-code" data-tab-panel="nodejs" role="tabpanel" aria-labelledby="qs-tab-nodejs" hidden><code>import axios from &quot;axios&quot;;
+import { HttpsProxyAgent } from &quot;https-proxy-agent&quot;;
+
+const proxy = &quot;http://user:pass@gw.proxyjam.com:7777&quot;;
+const agent = new HttpsProxyAgent(proxy);
+
+const response = await axios.get(
+  &quot;https://ipinfo.io/json&quot;,
+  {
+    httpAgent: agent,
+    httpsAgent: agent,
+    headers: { &quot;X-PJ-Country&quot;: &quot;US&quot; },
+  },
+);
+
+console.log(response.data);</code></pre>
+        <pre class="qs-code" data-tab-panel="curl" role="tabpanel" aria-labelledby="qs-tab-curl" hidden><code>curl -x http://user:pass@gw.proxyjam.com:7777 \
+     -H &quot;X-PJ-Country: US&quot; \
+     https://ipinfo.io/json</code></pre>
+        <pre class="qs-code" data-tab-panel="java" role="tabpanel" aria-labelledby="qs-tab-java" hidden><code>import java.net.*;
+import java.net.http.*;
+
+var proxy = new InetSocketAddress(&quot;gw.proxyjam.com&quot;, 7777);
+
+var client = HttpClient.newBuilder()
+    .proxy(ProxySelector.of(proxy))
+    .build();
+
+var request = HttpRequest.newBuilder()
+    .uri(URI.create(&quot;https://ipinfo.io/json&quot;))
+    .header(&quot;Proxy-Authorization&quot;, &quot;Basic dXNlcjpwYXNz&quot;)
+    .header(&quot;X-PJ-Country&quot;, &quot;US&quot;)
+    .build();
+
+var response = client.send(
+    request, HttpResponse.BodyHandlers.ofString());
+
+System.out.println(response.body());</code></pre>
+        <pre class="qs-code" data-tab-panel="go" role="tabpanel" aria-labelledby="qs-tab-go" hidden><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;io&quot;
+    &quot;net/http&quot;
+    &quot;net/url&quot;
+)
+
+func main() {
+    proxy, _ := url.Parse(
+        &quot;http://user:pass@gw.proxyjam.com:7777&quot;)
+
+    client := &amp;http.Client{Transport: &amp;http.Transport{
+        Proxy: http.ProxyURL(proxy),
+    }}
+
+    req, _ := http.NewRequest(
+        &quot;GET&quot;, &quot;https://ipinfo.io/json&quot;, nil)
+    req.Header.Set(&quot;X-PJ-Country&quot;, &quot;US&quot;)
+
+    res, _ := client.Do(req)
+    body, _ := io.ReadAll(res.Body)
+    fmt.Println(string(body))
+}</code></pre>
+        </div>
+        <div class="scrollbar scrollbar--y scrollbar--inverse qs-scrollbar" data-scrollbar aria-hidden="true"><span class="scrollbar-thumb"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qs-side">
+    <div class="qs-top">
+      <div class="qs-copy">
+        <span class="section-label">INSTALLATION</span>
+        <h2 class="qs-title">Quick Setup for United States</h2>
+        <p class="qs-desc">Connect through real US IP addresses in a few lines of code. Add your ProxyJam credentials, select the United States with the country header, and start sending requests.</p>
+      </div>
+      <a href="#" class="btn-secondary-on-accent btn-xl qs-cta">Full US setup docs</a>
+    </div>
+
+    <div class="qs-list" role="tablist" aria-label="Code language">
+      <button type="button" class="qs-lang" role="tab" aria-controls="qs-code-python" aria-selected="true" data-tab="python">
+        <span class="qs-lang-body">
+          <span class="qs-lang-name">Python</span>
+          <span class="qs-lang-desc">Connect with Python requests and verify your US IP location.</span>
+        </span>
+      </button>
+      <button type="button" class="qs-lang" role="tab" aria-controls="qs-code-nodejs" aria-selected="false" data-tab="nodejs">
+        <span class="qs-lang-body">
+          <span class="qs-lang-name">Node.js</span>
+          <span class="qs-lang-desc">Route axios through a US exit node in a few lines.</span>
+        </span>
+      </button>
+      <button type="button" class="qs-lang" role="tab" aria-controls="qs-code-curl" aria-selected="false" data-tab="curl">
+        <span class="qs-lang-body">
+          <span class="qs-lang-name">cURL</span>
+          <span class="qs-lang-desc">One command to check which US IP your request goes out from.</span>
+        </span>
+      </button>
+      <button type="button" class="qs-lang" role="tab" aria-controls="qs-code-java" aria-selected="false" data-tab="java">
+        <span class="qs-lang-body">
+          <span class="qs-lang-name">Java</span>
+          <span class="qs-lang-desc">Set the proxy on HttpClient and target the United States.</span>
+        </span>
+      </button>
+      <button type="button" class="qs-lang" role="tab" aria-controls="qs-code-go" aria-selected="false" data-tab="go">
+        <span class="qs-lang-body">
+          <span class="qs-lang-name">Go</span>
+          <span class="qs-lang-desc">Configure http.Transport with a US gateway and send a request.</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     FAQ
+══════════════════════════════════ -->
+<section class="section">
+
+  <div class="section-header">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title">Frequently asked questions</h2>
+  </div>
+
+  <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">How many US IPs do you have?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">18M+ residential, plus mobile, ISP, and datacenter pools.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">Can I target a specific US city?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Yes, 30+ cities available. See city list above.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">Are these real US IPs?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Yes, sourced from real consumer devices (residential), real US mobile carriers (mobile), and US ISP-owned ranges (ISP static).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">What&rsquo;s the difference between US residential and ISP?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Residential rotates and looks like a home user. ISP is static, datacenter-grade speed, but registered to a residential ISP.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">Is using US proxies legal?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Yes for legitimate use (research, scraping public data, ad verification). See AUP.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">How fast is rotation?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Per request by default; sticky sessions up to 60 minutes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-q">Can I target specific US states?</span>
+          <span class="faq-icon"><img src="assets/faq-chevron.svg" alt=""></span>
+        </button>
+        <div class="faq-body"><p class="faq-a">Yes. All 50 states with city-level granularity in 30+ cities.</p></div>
+      </div>
+
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     OTHER LOCATIONS
+══════════════════════════════════ -->
+<section class="section">
+
+  <div class="section-header">
+    <span class="section-label">OTHER LOCATIONS</span>
+    <h2 class="section-title">Other Popular Proxy Locations</h2>
+  </div>
+
+  <div class="cc-row">
+
+      <a class="cc-card" href="locations/canada-proxy/">
+        <span class="cc-head">
+          <span class="cc-flag"><img src="assets/flag-ca.svg" alt="" width="48" height="48"></span>
+          <span class="cc-go" aria-hidden="true"><img src="assets/arrow-right.svg" alt="" width="24" height="24"></span>
+        </span>
+        <span class="cc-text">
+          <span class="cc-name">Canada</span>
+          <span class="cc-ips">2.4M IPs</span>
+        </span>
+      </a>
+
+      <a class="cc-card" href="locations/mexico-proxy/">
+        <span class="cc-head">
+          <span class="cc-flag"><img src="assets/flag-mx.webp" alt="" width="48" height="48"></span>
+          <span class="cc-go" aria-hidden="true"><img src="assets/arrow-right.svg" alt="" width="24" height="24"></span>
+        </span>
+        <span class="cc-text">
+          <span class="cc-name">Mexico</span>
+          <span class="cc-ips">1.1M IPs</span>
+        </span>
+      </a>
+
+      <a class="cc-card" href="locations/united-kingdom-proxy/">
+        <span class="cc-head">
+          <span class="cc-flag"><img src="assets/flag-uk.svg" alt="" width="48" height="48"></span>
+          <span class="cc-go" aria-hidden="true"><img src="assets/arrow-right.svg" alt="" width="24" height="24"></span>
+        </span>
+        <span class="cc-text">
+          <span class="cc-name">United Kingdom</span>
+          <span class="cc-ips">4.2M IPs</span>
+        </span>
+      </a>
+
+      <a class="cc-card" href="locations/germany-proxy/">
+        <span class="cc-head">
+          <span class="cc-flag"><img src="assets/flag-de.svg" alt="" width="48" height="48"></span>
+          <span class="cc-go" aria-hidden="true"><img src="assets/arrow-right.svg" alt="" width="24" height="24"></span>
+        </span>
+        <span class="cc-text">
+          <span class="cc-name">Germany</span>
+          <span class="cc-ips">3.8M IPs</span>
+        </span>
+      </a>
+
+      <a class="cc-card" href="locations/france-proxy/">
+        <span class="cc-head">
+          <span class="cc-flag"><img src="assets/flag-fr.svg" alt="" width="48" height="48"></span>
+          <span class="cc-go" aria-hidden="true"><img src="assets/arrow-right.svg" alt="" width="24" height="24"></span>
+        </span>
+        <span class="cc-text">
+          <span class="cc-name">France</span>
+          <span class="cc-ips">2.9M IPs</span>
+        </span>
+      </a>
+
+  </div>
+
+  <a href="#" class="btn-secondary-on-accent btn-xl">View all countries</a>
 
 </section>
 
@@ -813,6 +1118,7 @@
 <script src="js/includes.js"></script>
 <script src="js/globe.js"></script>
 <script src="js/tabs.js"></script>
-<script src="js/hscroll.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/faq.js"></script>
 </body>
 </html>
