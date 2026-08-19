@@ -299,7 +299,6 @@ a.cd-field-value:hover { color: var(--action-primary); }
 /* Mobile */
 @media (max-width: 960px) {
   .cu-section { gap: var(--space-600); }
-  .cu-title { font-size: var(--text-h1-m-size); letter-spacing: var(--text-h1-m-tracking); line-height: var(--text-h1-m-line); }
   /* Same mobile column width as .faq-list */
   .cu-grid { max-width: 442px; }
   .cu-row { flex-direction: column; }

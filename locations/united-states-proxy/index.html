@@ -52,6 +52,8 @@
     <a href="locations/united-states-proxy/">United States proxies</a>
   </nav>
 
+  <a href="#" class="btn-secondary-on-accent btn-xl loc-all-btn">View all locations</a>
+
   <div class="loc-stats">
     <div class="stats-row">
       <div class="stats-item">
@@ -79,9 +81,738 @@
 </section>
 
 
+<!-- ══════════════════════════════════
+     AVAILABLE PROXIES — pricing
+══════════════════════════════════ -->
+<section class="section pp-section">
+
+  <div class="section-header">
+    <span class="section-label">PROXY TYPES</span>
+    <h2 class="section-title">Available proxies in the United States</h2>
+
+    <div class="pp-tabs" role="tablist" aria-label="Proxy type">
+      <button type="button" class="pp-tab" role="tab" aria-selected="true"  id="pp-tab-residential-isp" aria-controls="pp-panel-residential-isp" data-tab="residential-isp">Residential ISP</button>
+      <button type="button" class="pp-tab" role="tab" aria-selected="false" id="pp-tab-rotating-residential" aria-controls="pp-panel-rotating-residential" data-tab="rotating-residential">Rotating Residential</button>
+      <button type="button" class="pp-tab" role="tab" aria-selected="false" id="pp-tab-static-datacenter" aria-controls="pp-panel-static-datacenter" data-tab="static-datacenter">Static Datacenter</button>
+      <button type="button" class="pp-tab" role="tab" aria-selected="false" id="pp-tab-mobile-rotating" aria-controls="pp-panel-mobile-rotating" data-tab="mobile-rotating">Mobile Rotating</button>
+    </div>
+  </div>
+
+  <!-- Only Residential ISP comes from the mockup; the other three sets are
+       stand-ins, shaped to each product and priced per IP like the rest of the
+       range, meant to be replaced with real numbers. js/tabs.js shows one
+       panel at a time. -->
+    <div class="pp-cards" data-tab-panel="residential-isp" role="tabpanel" id="pp-panel-residential-isp" aria-labelledby="pp-tab-residential-isp">
+
+      <article class="pp-card">
+        <div class="pp-head">
+          <span class="pp-plan">5 IPs</span>
+          <p class="pp-price"><span class="pp-amount">$2.20</span><span class="pp-unit">/IP</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Dedicated IP address
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              100+ countries
+            </li>
+          </ul>
+        <a href="#" class="btn-secondary btn-l">Get Started</a>
+      </article>
+
+      <article class="pp-card pp-card--featured">
+        <span class="pp-badge">MOST POPULAR</span>
+        <div class="pp-head">
+          <span class="pp-plan">30 IPs</span>
+          <p class="pp-price"><span class="pp-amount">$1.80</span><span class="pp-unit">/GB</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Dedicated IP address
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              100+ countries
+            </li>
+          </ul>
+        <a href="#" class="btn-primary btn-xl">Get Started</a>
+      </article>
+
+      <article class="pp-card">
+        <div class="pp-head">
+          <span class="pp-plan">100+ IPs</span>
+          <p class="pp-price"><span class="pp-amount">Custom</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Dedicated IP address
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              100+ countries
+            </li>
+          </ul>
+        <a href="#" class="btn-secondary btn-l">Get Started</a>
+      </article>
+
+    </div>
+
+    <div class="pp-cards" data-tab-panel="rotating-residential" role="tabpanel" id="pp-panel-rotating-residential" aria-labelledby="pp-tab-rotating-residential" hidden>
+
+      <article class="pp-card">
+        <div class="pp-head">
+          <span class="pp-plan">5 IPs</span>
+          <p class="pp-price"><span class="pp-amount">$3.50</span><span class="pp-unit">/IP</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Sticky sessions up to 30 min
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              City & state targeting
+            </li>
+          </ul>
+        <a href="#" class="btn-secondary btn-l">Get Started</a>
+      </article>
+
+      <article class="pp-card pp-card--featured">
+        <span class="pp-badge">MOST POPULAR</span>
+        <div class="pp-head">
+          <span class="pp-plan">30 IPs</span>
+          <p class="pp-price"><span class="pp-amount">$2.90</span><span class="pp-unit">/IP</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Sticky sessions up to 30 min
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              City & state targeting
+            </li>
+          </ul>
+        <a href="#" class="btn-primary btn-xl">Get Started</a>
+      </article>
+
+      <article class="pp-card">
+        <div class="pp-head">
+          <span class="pp-plan">100+ IPs</span>
+          <p class="pp-price"><span class="pp-amount">Custom</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Sticky sessions up to 30 min
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              City & state targeting
+            </li>
+          </ul>
+        <a href="#" class="btn-secondary btn-l">Get Started</a>
+      </article>
+
+    </div>
+
+    <div class="pp-cards" data-tab-panel="static-datacenter" role="tabpanel" id="pp-panel-static-datacenter" aria-labelledby="pp-tab-static-datacenter" hidden>
+
+      <article class="pp-card">
+        <div class="pp-head">
+          <span class="pp-plan">5 IPs</span>
+          <p class="pp-price"><span class="pp-amount">$1.20</span><span class="pp-unit">/IP</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Dedicated IP address
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              30+ US cities
+            </li>
+          </ul>
+        <a href="#" class="btn-secondary btn-l">Get Started</a>
+      </article>
+
+      <article class="pp-card pp-card--featured">
+        <span class="pp-badge">MOST POPULAR</span>
+        <div class="pp-head">
+          <span class="pp-plan">30 IPs</span>
+          <p class="pp-price"><span class="pp-amount">$0.90</span><span class="pp-unit">/IP</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Dedicated IP address
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              30+ US cities
+            </li>
+          </ul>
+        <a href="#" class="btn-primary btn-xl">Get Started</a>
+      </article>
+
+      <article class="pp-card">
+        <div class="pp-head">
+          <span class="pp-plan">100+ IPs</span>
+          <p class="pp-price"><span class="pp-amount">Custom</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Dedicated IP address
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              30+ US cities
+            </li>
+          </ul>
+        <a href="#" class="btn-secondary btn-l">Get Started</a>
+      </article>
+
+    </div>
+
+    <div class="pp-cards" data-tab-panel="mobile-rotating" role="tabpanel" id="pp-panel-mobile-rotating" aria-labelledby="pp-tab-mobile-rotating" hidden>
+
+      <article class="pp-card">
+        <div class="pp-head">
+          <span class="pp-plan">5 IPs</span>
+          <p class="pp-price"><span class="pp-amount">$6.90</span><span class="pp-unit">/IP</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Real 4G/5G carrier IPs
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              All 50 states
+            </li>
+          </ul>
+        <a href="#" class="btn-secondary btn-l">Get Started</a>
+      </article>
+
+      <article class="pp-card pp-card--featured">
+        <span class="pp-badge">MOST POPULAR</span>
+        <div class="pp-head">
+          <span class="pp-plan">30 IPs</span>
+          <p class="pp-price"><span class="pp-amount">$5.40</span><span class="pp-unit">/IP</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Real 4G/5G carrier IPs
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              All 50 states
+            </li>
+          </ul>
+        <a href="#" class="btn-primary btn-xl">Get Started</a>
+      </article>
+
+      <article class="pp-card">
+        <div class="pp-head">
+          <span class="pp-plan">100+ IPs</span>
+          <p class="pp-price"><span class="pp-amount">Custom</span></p>
+        </div>
+          <ul class="pp-feats">
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-bandwidth.svg" alt="" width="20" height="10"></span>
+              Unlimited Bandwidth
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-protocols.svg" alt="" width="20" height="19"></span>
+              HTTP/SOCKS5 protocols
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-dedicated.svg" alt="" width="18.5" height="19.5"></span>
+              Real 4G/5G carrier IPs
+            </li>
+            <li class="pp-feat">
+              <span class="pp-feat-icon"><img src="assets/feat-countries.svg" alt="" width="21.9" height="21.9"></span>
+              All 50 states
+            </li>
+          </ul>
+        <a href="#" class="btn-secondary btn-l">Get Started</a>
+      </article>
+
+    </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     TOP USE CASES
+══════════════════════════════════ -->
+<section class="section uc-section">
+
+  <div class="section-header">
+    <span class="section-label">TOP CASES</span>
+    <h2 class="section-title">Top Use Cases for US Proxies</h2>
+  </div>
+
+  <div class="uc-grid">
+
+    <article class="uc-card uc-card--tall">
+      <div class="icon-tile icon-tile--lg icon-tile--brand">
+        <img src="assets/uc-icon-social.svg" alt="" width="28" height="28">
+      </div>
+      <div class="uc-text">
+        <h3 class="uc-title">Social Media</h3>
+        <p class="uc-desc">Run US accounts on Instagram, TikTok, Twitter without bans.</p>
+      </div>
+
+      <!-- Decorative: one assembled picture (circles + app icons) -->
+      <img class="uc-art" src="assets/uc-social-art.svg" alt="" aria-hidden="true">
+    </article>
+
+    <article class="uc-card">
+      <div class="icon-tile icon-tile--lg icon-tile--brand">
+        <img src="assets/uc-icon-betting.svg" alt="" width="28" height="28">
+      </div>
+      <div class="uc-text">
+        <h3 class="uc-title">Sports Betting</h3>
+        <p class="uc-desc">DraftKings, FanDuel, BetMGM are state-licensed. Use state-level targeting for NJ, PA, NY, AZ.</p>
+      </div>
+    </article>
+
+    <article class="uc-card">
+      <div class="icon-tile icon-tile--lg icon-tile--brand">
+        <img src="assets/uc-icon-ads.svg" alt="" width="28" height="28">
+      </div>
+      <div class="uc-text">
+        <h3 class="uc-title">Ad Verification</h3>
+        <p class="uc-desc">Largest ad market in the world. Verify creatives across DMAs.</p>
+      </div>
+    </article>
+
+    <article class="uc-card">
+      <div class="icon-tile icon-tile--lg icon-tile--brand">
+        <img src="assets/uc-icon-sneakers.svg" alt="" width="28" height="28">
+      </div>
+      <div class="uc-text">
+        <h3 class="uc-title">Sneaker Copping</h3>
+        <p class="uc-desc">US gets the biggest Nike SNKRS and Shopify drops. Use ISP/residential IPs from US-East and US-West.</p>
+      </div>
+    </article>
+
+    <article class="uc-card">
+      <div class="icon-tile icon-tile--lg icon-tile--brand">
+        <img src="assets/uc-icon-ticketing.svg" alt="" width="28" height="28">
+      </div>
+      <div class="uc-text">
+        <h3 class="uc-title">Ticketing</h3>
+        <p class="uc-desc">Secure seats on Ticketmaster and StubHub with rotating US IPs.</p>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     WHY US PROXIES
+══════════════════════════════════ -->
+<section class="section uc-section">
+
+  <div class="section-header">
+    <span class="section-label">KEY USE CASES</span>
+    <h2 class="section-title">Why United States Proxies?</h2>
+  </div>
+
+  <div class="uc-grid uc-grid--row">
+
+    <article class="uc-card">
+      <div class="icon-tile icon-tile--lg icon-tile--brand">
+        <img src="assets/uc-icon-ecommerce.svg" alt="" width="28" height="28">
+      </div>
+      <div class="uc-text">
+        <h3 class="uc-title">Biggest E-Commerce Market</h3>
+        <p class="uc-desc">US-pricing on Amazon, Walmart, Target shows only to US IPs. Real residential IPs for accurate scraping.</p>
+      </div>
+    </article>
+
+    <article class="uc-card">
+      <div class="icon-tile icon-tile--lg icon-tile--brand">
+        <img src="assets/uc-icon-sneakers.svg" alt="" width="28" height="28">
+      </div>
+      <div class="uc-text">
+        <h3 class="uc-title">Sneaker Drop Epicenter</h3>
+        <p class="uc-desc">Nike SNKRS, Shopify drops, and Footsite releases launch in US-East first. ISP/residential IPs from NJ, NY, CA are critical.</p>
+      </div>
+    </article>
+
+    <article class="uc-card">
+      <div class="icon-tile icon-tile--lg icon-tile--brand">
+        <img src="assets/uc-icon-geo.svg" alt="" width="28" height="28">
+      </div>
+      <div class="uc-text">
+        <h3 class="uc-title">Multi-State Legal Landscape</h3>
+        <p class="uc-desc">Sports betting, cannabis, and other regulated products vary by state. State-level targeting required.</p>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     TECHNICAL SPECIFICATIONS
+══════════════════════════════════ -->
+<section class="section ts-section">
+
+  <div class="section-header">
+    <span class="section-label">TECHNICAL DETAILS</span>
+    <h2 class="section-title">Technical Specifications</h2>
+  </div>
+
+  <div class="ts-card">
+    <dl class="ts-table">
+
+    <div class="ts-row">
+      <dt class="ts-term">
+        <span class="icon-tile icon-tile--brand"><img src="assets/ts-icon-pool.svg" alt="" width="24" height="24"></span>
+        Pool size residential
+      </dt>
+      <dd class="ts-value">
+        <div class="ts-frame"><div class="ts-fill">18M+</div></div>
+      </dd>
+    </div>
+
+    <div class="ts-row">
+      <dt class="ts-term">
+        <span class="icon-tile icon-tile--brand"><img src="assets/ts-icon-uptime.svg" alt="" width="24" height="24"></span>
+        Uptime SLA
+      </dt>
+      <dd class="ts-value">
+        <div class="ts-frame"><div class="ts-fill">99.9%</div></div>
+      </dd>
+    </div>
+
+    <div class="ts-row">
+      <dt class="ts-term">
+        <span class="icon-tile icon-tile--brand"><img src="assets/ts-icon-response.svg" alt="" width="24" height="24"></span>
+        Avg response time
+      </dt>
+      <dd class="ts-value">
+        <div class="ts-frame"><div class="ts-fill">less than 0.6s</div></div>
+      </dd>
+    </div>
+
+    <div class="ts-row">
+      <dt class="ts-term">
+        <span class="icon-tile icon-tile--brand"><img src="assets/ts-icon-rotation.svg" alt="" width="24" height="24"></span>
+        Rotation
+      </dt>
+      <dd class="ts-value">
+        <div class="ts-frame"><div class="ts-fill">Per request, time-based, or sticky</div></div>
+      </dd>
+    </div>
+
+    <div class="ts-row">
+      <dt class="ts-term">
+        <span class="icon-tile icon-tile--brand"><img src="assets/ts-icon-sticky.svg" alt="" width="24" height="24"></span>
+        Sticky session duration
+      </dt>
+      <dd class="ts-value">
+        <div class="ts-frame"><div class="ts-fill">1 to 60 minutes</div></div>
+      </dd>
+    </div>
+
+    <div class="ts-row">
+      <dt class="ts-term">
+        <span class="icon-tile icon-tile--brand"><img src="assets/ts-icon-protocols.svg" alt="" width="24" height="24"></span>
+        Protocols
+      </dt>
+      <dd class="ts-value">
+        <div class="ts-frame"><div class="ts-fill">HTTP, HTTPS, SOCKS5</div></div>
+      </dd>
+    </div>
+
+    <div class="ts-row">
+      <dt class="ts-term">
+        <span class="icon-tile icon-tile--brand"><img src="assets/ts-icon-auth.svg" alt="" width="24" height="24"></span>
+        Authentication
+      </dt>
+      <dd class="ts-value">
+        <div class="ts-frame"><div class="ts-fill">User:pass or IP whitelist</div></div>
+      </dd>
+    </div>
+
+    <div class="ts-row">
+      <dt class="ts-term">
+        <span class="icon-tile icon-tile--brand"><img src="assets/ts-icon-ip.svg" alt="" width="24" height="24"></span>
+        IPv4 / IPv6
+      </dt>
+      <dd class="ts-value">
+        <div class="ts-frame"><div class="ts-fill">IPv4 (IPv6 on request)</div></div>
+      </dd>
+    </div>
+
+    <div class="ts-row">
+      <dt class="ts-term">
+        <span class="icon-tile icon-tile--brand"><img src="assets/ts-icon-asn.svg" alt="" width="24" height="24"></span>
+        ASN diversity
+      </dt>
+      <dd class="ts-value">
+        <div class="ts-frame"><div class="ts-fill">500+ ASNs in United States</div></div>
+      </dd>
+    </div>
+
+    <div class="ts-row">
+      <dt class="ts-term">
+        <span class="icon-tile icon-tile--brand"><img src="assets/ts-icon-concurrent.svg" alt="" width="24" height="24"></span>
+        Concurrent connections
+      </dt>
+      <dd class="ts-value">
+        <div class="ts-frame"><div class="ts-fill">Unlimited</div></div>
+      </dd>
+    </div>
+
+    </dl>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     COMPARISON
+══════════════════════════════════ -->
+<section class="section cmp-section">
+
+  <div class="section-header">
+    <span class="section-label">COMPARISON</span>
+    <h2 class="section-title">ProxyJam vs Competitors for US Proxies</h2>
+  </div>
+
+  <div class="cmp-wrap">
+    <div class="cmp-scroll" data-hscroll>
+    <div class="cmp-table" role="table" aria-label="ProxyJam compared with other US proxy providers">
+
+      <div class="cmp-row" role="row">
+        <div class="cmp-label" role="columnheader"></div>
+        <div class="cmp-cell cmp-cell--own" role="columnheader">
+          <div class="cmp-frame"><div class="cmp-fill"><span class="brand-wordmark cmp-brand">ProxyJam</span></div></div>
+        </div>
+        <div class="cmp-cell" role="columnheader">
+          <div class="cmp-frame"><div class="cmp-fill"><span class="cmp-head">BrightData</span></div></div>
+        </div>
+        <div class="cmp-cell" role="columnheader">
+          <div class="cmp-frame"><div class="cmp-fill"><span class="cmp-head">Oxylabs</span></div></div>
+        </div>
+        <div class="cmp-cell" role="columnheader">
+          <div class="cmp-frame"><div class="cmp-fill"><span class="cmp-head">Decodo</span></div></div>
+        </div>
+      </div>
+
+      <div class="cmp-row" role="row">
+        <div class="cmp-label" role="rowheader">Min price residential/GB</div>
+        <div class="cmp-cell cmp-cell--own" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill">$2.20</div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill">$8.40</div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill">$8.00</div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill">$7.00</div></div>
+        </div>
+      </div>
+
+      <div class="cmp-row" role="row">
+        <div class="cmp-label" role="rowheader">US city-level targeting</div>
+        <div class="cmp-cell cmp-cell--own" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill">All cities</div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill">Major only</div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill">Major only</div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill">Country only</div></div>
+        </div>
+      </div>
+
+      <div class="cmp-row" role="row">
+        <div class="cmp-label" role="rowheader">Mobile 4G in US</div>
+        <div class="cmp-cell cmp-cell--own" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-check.svg" alt="Yes" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-check-dark.svg" alt="Yes" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-check-dark.svg" alt="Yes" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-cross.svg" alt="No" width="24" height="24"></div></div>
+        </div>
+      </div>
+
+      <div class="cmp-row" role="row">
+        <div class="cmp-label" role="rowheader">ISP static in US</div>
+        <div class="cmp-cell cmp-cell--own" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-check.svg" alt="Yes" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-check-dark.svg" alt="Yes" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-check-dark.svg" alt="Yes" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-cross.svg" alt="No" width="24" height="24"></div></div>
+        </div>
+      </div>
+
+      <div class="cmp-row" role="row">
+        <div class="cmp-label" role="rowheader">Pay-as-you-go</div>
+        <div class="cmp-cell cmp-cell--own" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-check.svg" alt="Yes" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-cross.svg" alt="No" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-cross.svg" alt="No" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-check-dark.svg" alt="Yes" width="24" height="24"></div></div>
+        </div>
+      </div>
+
+      <div class="cmp-row" role="row">
+        <div class="cmp-label" role="rowheader">7-day refund</div>
+        <div class="cmp-cell cmp-cell--own" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-check.svg" alt="Yes" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-cross.svg" alt="No" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-cross.svg" alt="No" width="24" height="24"></div></div>
+        </div>
+        <div class="cmp-cell" role="cell">
+          <div class="cmp-frame"><div class="cmp-fill"><img src="assets/cmp-cross.svg" alt="No" width="24" height="24"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="cmp-bar" data-hscroll-bar aria-hidden="true"><span class="cmp-bar-thumb"></span></div>
+  </div>
+
+</section>
+
+
 <div data-include="partials/footer.html"></div>
 
 <script src="js/includes.js"></script>
 <script src="js/globe.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/hscroll.js"></script>
 </body>
 </html>

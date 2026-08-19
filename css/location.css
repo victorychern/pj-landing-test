@@ -123,6 +123,9 @@
 }
 .loc-globe-tip.is-visible { opacity: 1; }
 
+/* Sits right under the globe; leads to the full country list */
+.loc-all-btn { flex-shrink: 0; }
+
 /* Stats row (.stats-* lives in common.css) */
 .loc-stats {
   display: flex;
@@ -132,11 +135,6 @@
 }
 
 @media (max-width: 960px) {
-  .loc-title {
-    font-size: var(--text-h1-m-size);
-    line-height: var(--text-h1-m-line);
-    letter-spacing: var(--text-h1-m-tracking);
-  }
   /* Title breaks naturally on narrow screens */
   .loc-title br { display: none; }
   .loc-btns { flex-direction: column; width: 100%; max-width: 442px; }
@@ -148,5 +146,614 @@
      page scroll (js/globe.js matches this breakpoint) */
   .loc-globe-canvas { pointer-events: none; touch-action: auto; cursor: default; }
   .loc-globe-tip { display: none; }
-  .loc-stats { padding: 0; }
+}
+
+
+/* ══════════════════════════════════
+   AVAILABLE PROXIES — pricing cards
+   Uses the shared .section / .section-header / .section-title (common.css)
+══════════════════════════════════ */
+
+/* Type switcher — same visual pattern as .dash-tab on the home page */
+.pp-tabs {
+  display: flex;
+  gap: var(--space-200);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pp-tab {
+  height: 36px;
+  padding: 0 var(--space-300);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-300);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-m-size);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-body-m-tracking);
+  line-height: var(--text-body-m-line);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.pp-tab[aria-selected="true"] {
+  background: var(--bg-overlay-subtle);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.pp-tab:focus-visible {
+  outline: 2px solid var(--border-accent);
+  outline-offset: 2px;
+}
+
+/* Card row */
+/* [hidden] has to be reasserted: the author display below would beat it */
+.pp-cards[hidden] { display: none; }
+.pp-cards {
+  display: flex;
+  gap: var(--space-600);
+  align-items: stretch;
+  width: 100%;
+}
+.pp-card {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1100);
+  background: var(--bg-surface-1);
+  border-radius: var(--radius-600);
+  padding: var(--space-1200) var(--space-600) var(--space-600);
+}
+
+/* Highlighted plan — brand tint plus a ring: a surface-coloured gap first,
+   then the accent contour, so neither one shifts the layout */
+.pp-card--featured {
+  position: relative;
+  background:
+    linear-gradient(var(--status-brand-bg), var(--status-brand-bg)),
+    var(--bg-surface-1);
+  box-shadow:
+    0 0 0 2px var(--bg-surface-1),
+    0 0 0 4.5px var(--border-accent);
+}
+.pp-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: var(--space-150) var(--space-800) var(--space-150) var(--space-600);
+  background: var(--status-brand-surface);
+  border-radius: var(--radius-600) 0 var(--radius-500) 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption-size);
+  font-weight: 500;
+  color: var(--text-inverse);
+  letter-spacing: var(--text-caption-tracking);
+  line-height: var(--text-caption-line);
+  white-space: nowrap;
+}
+
+/* Plan name + price */
+.pp-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  align-items: flex-start;
+}
+.pp-plan {
+  font-family: var(--font-sans);
+  font-size: var(--text-h3-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h3-tracking);
+  line-height: var(--text-h3-line);
+}
+.pp-price {
+  display: flex;
+  gap: var(--space-100);
+  align-items: baseline;
+}
+.pp-amount {
+  font-family: var(--font-sans-display);
+  font-size: var(--text-h1-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h1-tracking);
+  line-height: var(--text-h1-line);
+}
+.pp-unit {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+}
+
+/* Feature list */
+.pp-feats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-400);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pp-feat {
+  display: flex;
+  gap: var(--space-300);
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-m-size);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: var(--text-body-m-tracking);
+  line-height: var(--text-body-m-line);
+}
+/* Fixed 24px box; each glyph keeps its own drawn proportions inside it */
+.pp-feat-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pp-feat-icon img { display: block; }
+
+/* Button sits at the bottom, so cards line up however long the list is */
+.pp-card .btn-primary,
+.pp-card .btn-secondary {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Mobile — cards stack; the row gap, inner gap and title size all stay as they
+   are on desktop. Only the card's top padding and corner radius change. */
+@media (max-width: 960px) {
+  .pp-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pp-card {
+    flex: none;
+    width: 100%;
+    max-width: 442px;
+    padding: var(--space-1100) var(--space-600) var(--space-600);
+    border-radius: var(--radius-500);
+  }
+  .pp-badge { border-top-left-radius: var(--radius-500); }
+}
+
+
+/* ══════════════════════════════════
+   TOP USE CASES — bento grid
+   The first card spans both rows and carries the illustration
+══════════════════════════════════ */
+.uc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: var(--space-600);
+  width: 100%;
+  min-height: 600px;
+}
+/* Single-row variant of the same grid (Why US proxies) */
+.uc-grid--row {
+  grid-template-rows: minmax(0, 1fr);
+  min-height: 288px;
+}
+
+.uc-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1000);
+  background: var(--bg-surface-1);
+  border-radius: var(--radius-600);
+  padding: var(--space-600);
+}
+.uc-card--tall {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  position: relative;
+  overflow: hidden;
+}
+
+.uc-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-350);
+  padding-bottom: var(--space-200);
+}
+.uc-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-h2-size);
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h2-tracking);
+  line-height: var(--text-h2-line);
+}
+.uc-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+}
+
+/* Illustration — one SVG pinned to the bottom of the card. Mobile is the same
+   artwork at 0.9 scale in the mockup, and the card is narrower by about the
+   same ratio, so width:100% covers both breakpoints. */
+.uc-art {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+@media (max-width: 960px) {
+  .uc-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    min-height: 0;
+    max-width: 442px;
+    margin: 0 auto;
+  }
+  .uc-card {
+    padding: var(--space-500);
+    border-radius: var(--radius-500);
+  }
+  /* The card can stretch to 442 while the mockup's is 343, and the illustration
+     scales with width — so a fixed height would let it ride up over the text.
+     In one column it goes into the flow instead and the card grows to fit;
+     at the mockup's 343 this lands on the same 535px. */
+  .uc-card--tall {
+    grid-column: auto;
+    grid-row: auto;
+    height: auto;
+  }
+  .uc-card--tall .uc-art {
+    position: static;
+    width: calc(100% + 2 * var(--space-500));
+    margin: 0 calc(-1 * var(--space-500)) calc(-1 * var(--space-500));
+  }
+
+}
+
+
+/* ══════════════════════════════════
+   TECHNICAL SPECIFICATIONS — spec table
+   A description list: term on the left, value inside a continuous accent
+   frame that runs down the whole right column.
+══════════════════════════════════ */
+/* Outer frame — plain on desktop, a real bordered card on mobile */
+.ts-card {
+  width: 100%;
+  max-width: 686px;
+}
+.ts-table {
+  width: 100%;
+  margin: 0;
+  background: var(--bg-surface-1);
+  border-radius: var(--radius-600);
+  overflow: hidden;
+}
+.ts-row {
+  display: flex;
+  min-height: 84px;
+}
+/* last row is 8px taller — that is where the frame's bottom inset lives */
+.ts-row:last-child { min-height: 92px; }
+
+/* Left: icon tile + term */
+.ts-term {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+  margin: 0;
+  padding: 0 var(--space-600);
+  border-right: 1px dashed var(--border-primary);
+  border-bottom: 1px dashed var(--border-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+}
+.ts-row:last-child .ts-term { border-bottom: 0; }
+
+/* Right: the accent frame is built from three nested pieces so it can run
+   unbroken down the column while each row keeps its own dashed divider */
+.ts-value {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  margin: 0;
+  padding: 0 var(--space-200);
+}
+.ts-row:first-child .ts-value { padding-top: var(--space-200); }
+.ts-row:last-child  .ts-value { padding-bottom: var(--space-200); }
+
+.ts-frame {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  padding: 0 3px;
+  border-left: 2px solid var(--border-accent);
+  border-right: 2px solid var(--border-accent);
+}
+.ts-row:first-child .ts-frame {
+  padding-top: 3px;
+  border-top: 2px solid var(--border-accent);
+  border-radius: var(--radius-400) var(--radius-400) 0 0;
+}
+.ts-row:last-child .ts-frame {
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--border-accent);
+  border-radius: 0 0 var(--radius-400) var(--radius-400);
+}
+
+.ts-fill {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 13px;
+  background: var(--status-brand-bg);
+  border-top: 1px dashed var(--border-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  text-align: center;
+}
+.ts-row:first-child .ts-fill { border-top: 0; border-radius: 13px 13px 0 0; }
+.ts-row:last-child  .ts-fill { border-radius: 0 0 13px 13px; }
+
+/* Mobile — the two-column table becomes a plain list: the value sits under its
+   own label, indented past the icon. No dividers, no accent frame; the whole
+   card gets a thin ring instead (3px of page colour, then 2px of surface). */
+@media (max-width: 960px) {
+  /* Card width follows the site's mobile card rule rather than the full screen */
+  .ts-card {
+    max-width: 442px;
+    margin: 0 auto;
+    background: var(--bg-app);
+    border: 2px solid var(--bg-surface-1);
+    border-radius: var(--radius-500);
+    padding: 3px;
+  }
+  .ts-table {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-400);
+    padding: var(--space-500) 17px;
+    border-radius: 17px;
+  }
+
+  /* The icon leaves the flow so the label and value can sit tight together;
+     the row is indented past it (36 + 8). */
+  .ts-row {
+    display: block;
+    position: relative;
+    min-height: 0;
+    padding-left: 44px;
+  }
+  .ts-row:last-child { min-height: 0; }
+
+  .ts-term {
+    display: block;
+    padding: 0;
+    border: 0;
+    font-size: var(--text-body-s-size);
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: var(--text-body-s-tracking);
+    line-height: var(--text-body-s-line);
+  }
+  .ts-term .icon-tile {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .ts-value,
+  .ts-row:first-child .ts-value,
+  .ts-row:last-child .ts-value {
+    display: block;
+    padding: var(--space-050) 0 0;
+  }
+  .ts-frame,
+  .ts-row:first-child .ts-frame,
+  .ts-row:last-child .ts-frame {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  .ts-fill,
+  .ts-row:first-child .ts-fill,
+  .ts-row:last-child .ts-fill {
+    justify-content: flex-start;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    font-weight: 400;
+    text-align: left;
+  }
+}
+
+
+/* ══════════════════════════════════
+   COMPARISON — ProxyJam vs competitors
+   Same visual language as the spec table, but five columns: the own column is
+   framed in accent, the rest in a subtle border on the second surface.
+══════════════════════════════════ */
+.cmp-scroll { width: 100%; }
+.cmp-table {
+  width: 100%;
+  background: var(--bg-surface-1);
+  border-radius: var(--radius-600);
+  overflow: hidden;
+}
+.cmp-row {
+  display: flex;
+  min-height: 84px;
+}
+.cmp-row:last-child { min-height: 92px; }
+
+/* Left column — row labels */
+.cmp-label {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-600);
+  border-right: 1px dashed var(--border-primary);
+  border-bottom: 1px dashed var(--border-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  text-align: left;
+}
+.cmp-row:last-child .cmp-label { border-bottom: 0; }
+
+/* Value columns */
+.cmp-cell {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  padding: 0 var(--space-200);
+}
+.cmp-cell + .cmp-cell { border-left: 1px dashed var(--border-primary); }
+.cmp-cell--own + .cmp-cell { border-left: 1px dashed var(--border-primary); }
+.cmp-row:first-child .cmp-cell { padding-top: var(--space-200); }
+.cmp-row:last-child  .cmp-cell { padding-bottom: var(--space-200); }
+
+.cmp-frame {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  padding: 0 3px;
+  border-left: 2px solid var(--border-subtle);
+  border-right: 2px solid var(--border-subtle);
+}
+.cmp-cell--own .cmp-frame {
+  border-left-color: var(--border-accent);
+  border-right-color: var(--border-accent);
+}
+.cmp-row:first-child .cmp-frame {
+  padding-top: 3px;
+  border-top: 2px solid var(--border-subtle);
+  border-radius: var(--radius-400) var(--radius-400) 0 0;
+}
+.cmp-row:first-child .cmp-cell--own .cmp-frame { border-top-color: var(--border-accent); }
+.cmp-row:last-child .cmp-frame {
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--border-subtle);
+  border-radius: 0 0 var(--radius-400) var(--radius-400);
+}
+.cmp-row:last-child .cmp-cell--own .cmp-frame { border-bottom-color: var(--border-accent); }
+
+.cmp-fill {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 13px;
+  background: var(--bg-surface-2);
+  border-top: 1px dashed var(--border-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: var(--text-h4-tracking);
+  line-height: var(--text-h4-line);
+  text-align: center;
+}
+.cmp-cell--own .cmp-fill {
+  background: var(--status-brand-bg);
+  font-weight: 500;
+}
+.cmp-row:first-child .cmp-fill { border-top: 0; border-radius: 13px 13px 0 0; }
+.cmp-row:last-child  .cmp-fill { border-radius: 0 0 13px 13px; }
+
+/* Column headers */
+.cmp-head {
+  font-family: var(--font-sans);
+  font-size: var(--text-h3-size);
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: var(--text-h3-tracking);
+  line-height: var(--text-h3-line);
+}
+.cmp-brand { line-height: 32px; }  /* uses .brand-wordmark from common.css */
+.cmp-fill img { display: block; width: 24px; height: 24px; }
+
+/* Drawn scrollbar under the table (js/hscroll.js); the script hides it when
+   there is nothing to scroll, so desktop never shows it. */
+/* Table and its scrollbar are one unit — 8px apart, not the section's 32 */
+.cmp-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+  width: 100%;
+}
+.cmp-bar {
+  width: 100%;
+  height: 16px;
+  padding: 4px 2px 4px 4px;
+}
+.cmp-bar[hidden] { display: none; }
+.cmp-bar-thumb {
+  display: block;
+  height: 100%;
+  background: var(--bg-scroll);
+  border-radius: var(--radius-200);
+  cursor: grab;
+}
+.cmp-bar-thumb:active { cursor: grabbing; }
+
+/* Mobile — five columns can't shrink to a phone, so the table keeps its
+   drawn column widths and scrolls sideways. Type stays at desktop sizes;
+   only the label column narrows and its text is allowed to wrap. */
+@media (max-width: 960px) {
+  .cmp-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* native bar is hidden: on macOS/iOS it overlays the content instead of
+       sitting below it, which is where the mockup puts it */
+    scrollbar-width: none;
+  }
+  .cmp-scroll::-webkit-scrollbar { display: none; }
+
+  .cmp-table {
+    width: max-content;
+    border-radius: var(--radius-500);
+  }
+  .cmp-row:last-child { min-height: 84px; }
+
+  .cmp-label {
+    flex: 0 0 190px;
+    padding: 0 var(--space-400);
+  }
+  .cmp-cell { flex: 0 0 181px; }
 }

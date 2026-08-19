@@ -309,6 +309,9 @@
   color: var(--text-primary);
   letter-spacing: var(--text-h1-tracking);
   line-height: var(--text-h1-line);
+  /* Even out the lines — the default break leaves a two-word orphan.
+     Older browsers ignore this and wrap as before. */
+  text-wrap: balance;
 }
 .am-desc {
   font-family: var(--font-sans);
@@ -580,7 +583,12 @@
 }
 
 @media (max-width: 960px) {
-  .ahiw-title { font-size: var(--text-h1-m-size); letter-spacing: var(--text-h1-m-tracking); }
+  /* Display (40px) steps down to H1 on mobile — headings are 36px there */
+  .ahiw-title {
+    font-size: var(--text-h1-size);
+    line-height: var(--text-h1-line);
+    letter-spacing: var(--text-h1-tracking);
+  }
   .ahiw-card { padding: var(--space-500); }
   .ahiw-desktop { display: none; }
   .ahiw-mobile {
@@ -675,7 +683,6 @@
 }
 
 @media (max-width: 960px) {
-  .sc-title { font-size: var(--text-h1-m-size); letter-spacing: var(--text-h1-m-tracking); }
   .sc-btns { max-width: 442px; }
   .sc-btn { flex: 0 0 auto; }
 }
